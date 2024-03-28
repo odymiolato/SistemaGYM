@@ -105,17 +105,17 @@ include '../php/conexion.php';
                             echo "<td>" . $row['nombre'] . "</td>";
                             echo "<td>" . $row['nommem'] . "</td>";
                             echo "<td>" . $row['limCred'] . "</td>";
-                            echo "<td>" . $row['creador'] . "</td>";
+                            echo "<td>" . $row['usuario'] . "</td>";
                             echo "<td>" . ($row['estado'] ? 'Activo' : 'Inactivo') . "</td>";
 
                             echo "<td><div style='display:flex;'>";
-                            echo "<form id='eliminar" . $row['idPosicion'] . "' action='posiciomedit.php' method='post'>
-                                    <input type='text' name='idPosicion' value='" . $row['idPosicion'] . "' hidden>
-                                    <button class='edit-btn' onclick='editarUsuario(" . $row['idPosicion'] . ")'>Editar</button>
+                            echo "<form id='eliminar" . $row['idCliente'] . "' action='posiciomedit.php' method='post'>
+                                    <input type='text' name='idCliente' value='" . $row['idCliente'] . "' hidden>
+                                    <button class='edit-btn' onclick='editarUsuario(" . $row['idCliente'] . ")'>Editar</button>
                                 </form>";
-                            echo "<form id='editar" . $row['idPosicion'] . "' action='../php/eliminar_posicion.php' method='post'>
-                                    <input type='text' name='idPosicion' value='" . $row['idPosicion'] . "' hidden>
-                                    <button class='delete-btn' onclick='eliminarUsuario(" . $row['idPosicion'] . ")'>Eliminar</button>
+                            echo "<form id='editar" . $row['idCliente'] . "' action='../php/eliminar_posicion.php' method='post'>
+                                    <input type='text' name='idCliente' value='" . $row['idCliente'] . "' hidden>
+                                    <button class='delete-btn' onclick='eliminarUsuario(" . $row['idCliente'] . ")'>Eliminar</button>
                                 </form>";
                             echo "</div></td>";
                             echo "</tr>";
@@ -131,7 +131,7 @@ include '../php/conexion.php';
 
         <script>
             function redirectToNewUserPage() {
-                window.location.href = "clientesnew.php";
+                window.location.href = "clientenew.php";
             }
 
             function editarUsuario(idPosicion) {

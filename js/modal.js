@@ -5,7 +5,7 @@ async function openModal(accion) {
 	const lista = document.getElementById("lista");
 	lista.innerHTML = "";
 	let response;
-	let personas
+	let data
 	switch (accion) {
 		case 1:
 			document.getElementById("titulo-modal").textContent =
@@ -13,9 +13,9 @@ async function openModal(accion) {
 			response = await fetch(
 				"http://localhost/SistemaGYM/php/Getpersonas.php"
 			);
-			personas = await response.json();
+			data = await response.json();
 
-			personas.forEach((persona) => {
+			data.forEach((persona) => {
 				const li = document.createElement("li");
 				li.textContent = `${persona.nombre} - ID ${persona.idPersona}`;
 				li.onclick = function () {
@@ -31,9 +31,9 @@ async function openModal(accion) {
 			response = await fetch(
 				"http://localhost/SistemaGYM/php/Getposicion.php"
 			);
-			 posicions = await response.json();
+			 data = await response.json();
 
-			posicions.forEach((posicion) => {
+			data.forEach((posicion) => {
 				const li = document.createElement("li");
 				li.textContent = `${posicion.posicion} - ID ${posicion.idPosicion}`;
 				li.onclick = function () {
@@ -49,13 +49,13 @@ async function openModal(accion) {
 			response = await fetch(
 				"http://localhost/SistemaGYM/php/Getmembresia.php"
 			);
-			posicions = await response.json();
+			data = await response.json();
 
-			posicions.forEach((posicion) => {
+			data.forEach((membresia) => {
 				const li = document.createElement("li");
-				li.textContent = `${posicion.posicion} - ID ${posicion.idPosicion}`;
+				li.textContent = `${membresia.nombre} - ID ${membresia.idMembresia}`;
 				li.onclick = function () {
-					select(posicion.idPosicion, 3);
+					select(membresia.idMembresia, 3);
 				};
 				lista.appendChild(li);
 			});
@@ -73,7 +73,7 @@ function closeModal() {
 function select(id, accion) {
 	switch (accion) {
 		case 1:
-			document.getElementById("idEmpleado").value = id;
+			document.getElementById("idPersona").value = id;
 			closeModal();
 			break;
 
@@ -83,9 +83,9 @@ function select(id, accion) {
 			break;
 
 		case 3:
-			break;
 			document.getElementById("idMembresia").value = id;
 			closeModal();
+			break;
 		default:
 			break;
 	}

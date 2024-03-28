@@ -2,7 +2,7 @@
 include 'conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $codigo=$_POST['idEmpleado'];
+    $codigo=$_POST['idPersona'];
     $registro= $conn->query("SELECT * FROM empleado where idEmpleado = $codigo")
 or die("Problemas con el select: ".$conn->error);
 

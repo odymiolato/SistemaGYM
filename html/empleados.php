@@ -114,7 +114,7 @@ include '../php/conexion.php';
                                     <button class='edit-btn' onclick='editarUsuario(" . $row['idEmpleado'] . ")'>Editar</button>
                                 </form>";
                             echo "<form id='editar" . $row['idEmpleado'] . "' action='../php/eliminar_empleado.php' method='post'>
-                                    <input type='text' name='idEmpleado' value='" . $row['idEmpleado'] . "' hidden>
+                                    <input type='text' name='idPersona' value='" . $row['idEmpleado'] . "' hidden>
                                     <button class='delete-btn' onclick='eliminarUsuario(" . $row['idEmpleado'] . ")'>Eliminar</button>
                                 </form>";
                             echo "</div></td>";

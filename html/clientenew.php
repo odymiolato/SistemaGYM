@@ -54,9 +54,9 @@
                     <h2>Nuevo Cliente</h2>
                     <form action="../php/insertar_cliente.php" method="post">
 
-                        <label for="idEmpleado">ID Persona:</label><br>
+                        <label for="idPersona">ID Persona:</label><br>
                         <div class="input-btn-bus">
-                            <input type="text" id="idEmpleado" name="idEmpleado" required readonly>
+                            <input type="text" id="idPersona" name="idPersona" required readonly>
                             <button class="boton-lupa" type="button" onclick="openModal(1)"><i class="fas fa-search"></i></button>
                         </div>
 

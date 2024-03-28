@@ -3,7 +3,7 @@ include '../php/conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_insertar'])) {
 
-    $idEmpleado = $_POST['idEmpleado'];
+    $idEmpleado = $_POST['idPersona'];
     $idPosicion  = $_POST['idPosicion'];
     $estado = $_POST['estado'];
 

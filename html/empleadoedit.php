@@ -63,9 +63,9 @@ include '../php/conexion.php';
                  <h2>Actualizar Empleado</h2>
                  <form action='../php/actualizar_empleado.php' method='post'>
 
-                 <label for='idEmpleado'>ID Persona:</label><br>
+                 <label for='idPersona'>ID Persona:</label><br>
                  <div class='input-btn-bus'>
-                     <input type='text' value ='" . $row['idEmpleado'] . "' id='idEmpleado' name='idEmpleado' required readonly>
+                     <input type='text' value ='" . $row['idEmpleado'] . "' id='idPersona' name='idPersona' required readonly>
                      <button class='boton-lupa' disabled type='button' onclick='openModal(1)'><i class='fas fa-search'></i></button>
                  </div>
 
@@ -73,7 +73,7 @@ include '../php/conexion.php';
                  <label for='usuario'>ID Posicion:</label><br>
                  <div class='input-btn-bus'>
                      <input type='text' value ='" . $row['idPosicion'] . "' id='idPosicion' name='idPosicion' required readonly><br>
-                     <button class='boton-lupa' type='button' onclick='openModal(false)'><i class='fas fa-search'></i></button>
+                     <button class='boton-lupa' type='button' onclick='openModal(2)'><i class='fas fa-search'></i></button>
                  </div>
 
                  <label for='estado'>Estado:</label><br>
