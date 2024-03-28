@@ -109,7 +109,7 @@ include '../php/conexion.php';
                             echo "<td>" . ($row['estado'] ? 'Activo' : 'Inactivo') . "</td>";
 
                             echo "<td><div style='display:flex;'>";
-                            echo "<form id='eliminar" . $row['idCliente'] . "' action='posiciomedit.php' method='post'>
+                            echo "<form id='eliminar" . $row['idCliente'] . "' action='clienteedit.php' method='post'>
                                     <input type='text' name='idCliente' value='" . $row['idCliente'] . "' hidden>
                                     <button class='edit-btn' onclick='editarUsuario(" . $row['idCliente'] . ")'>Editar</button>
                                 </form>";
@@ -149,3 +149,5 @@ include '../php/conexion.php';
 </body>
 
 </html>
+<script type="text/javascript" src="../js/modal.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
