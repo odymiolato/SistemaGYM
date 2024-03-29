@@ -1,5 +1,8 @@
+.dashboard-header{
+    color: #fff;
+}
 .insert-form {
-    background-color: #fff;
+    background-color: black;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -8,11 +11,13 @@
 .insert-form h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .insert-form label {
     display: block;
     margin-bottom: 5px;
+    color: #fff;
 }
 
 .insert-form input[type="text"],
@@ -30,18 +35,18 @@
 .insert-form input[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: black;
+    background-color:#fff;
     border: none;
     border-radius: 3px;
-    color: #fff;
+    color: black;
     cursor: pointer;
 }
 
 .insert-form input[type="submit"]:hover {
-    background-color: #333;
+    background-color: #efb810;
+    COLOR: #fff;
 }
 
-/* Estilo básico para el modal */
 .modal {
     display: none; 
     position: fixed; 
@@ -83,11 +88,11 @@
 
 
 .boton-lupa {
-    font-size: 24px; /* Ajusta el tamaño del ícono dentro del botón */
-    width: 40px; /* Ancho del botón */
-    height: 40px; /* Alto del botón */
-    background-color: black;
-    color: white;
+    font-size: 24px; 
+    width: 40px; 
+    height: 40px; 
+    background-color: #fff;
+    color: black;
     border: none;
     border-radius: 10px; /* Esquinas redondeadas */
     cursor: pointer;
@@ -98,5 +103,6 @@
   }
   
   .boton-lupa:hover {
-    background-color: #333; /* Cambio de color al pasar el mouse */
+    background-color: #efb810; 
+    color: #fff;
   }

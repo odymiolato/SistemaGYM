@@ -6,6 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #efb810;
 }
 
 .container {
@@ -16,7 +17,7 @@ body {
 }
 
 .sidebar-top {
-    background-color: #333; 
+    background-color: black; 
     padding: 20px;
     grid-column: 1 / -1; 
     grid-row: 1;
@@ -31,7 +32,7 @@ body {
 
 .sidebar-left,
 .sidebar-right {
-    background-color: #333;
+    background-color: black;
     padding: 20px;
 }
 
@@ -48,7 +49,7 @@ body {
 .sidebar-left summary {
     cursor: pointer;
     padding: 5px 10px;
-    background-color: black;
+    background-color: #efb810;
     color: #fff;
     border-radius: 5px;
 }
@@ -97,7 +98,7 @@ body {
 
 .nav a:hover {
     background-color: #fff;
-    color: #333;
+    color: black;
 }
 
 .main-content {
@@ -105,7 +106,7 @@ body {
 }
 
 .footer {
-    background-color: #333;
+    background-color: black;
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -181,7 +182,7 @@ canvas {
 }
 
 .back-btn:hover {
-    background-color: #333;
+    background-color: black;
 }
 
 .back-btn:active {
@@ -206,7 +207,6 @@ canvas {
     right: 0;
     display: block;
     border-radius: 50px;
-    background: #b1dae7;
     width: 45px;
     height: 45px;
     transition: all 0.3s ease;
@@ -218,7 +218,7 @@ canvas {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: #234567;
+    color: black;
   }
   
   .cta svg {
@@ -228,7 +228,7 @@ canvas {
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke: #234567;
+    stroke: black;
     stroke-width: 2;
     transform: translateX(5px) scale(-1, 1);
     transition: all 0.3s ease;
@@ -236,7 +236,7 @@ canvas {
   
   .cta:hover:before {
     width: 100%;
-    background: #b1dae7;
+    background: black;
   }
   
   .cta:hover svg {
