@@ -113,7 +113,7 @@ include '../php/conexion.php';
                                     <input type='text' name='idCliente' value='" . $row['idCliente'] . "' hidden>
                                     <button class='edit-btn' onclick='editarUsuario(" . $row['idCliente'] . ")'>Editar</button>
                                 </form>";
-                            echo "<form id='editar" . $row['idCliente'] . "' action='../php/eliminar_posicion.php' method='post'>
+                            echo "<form id='editar" . $row['idCliente'] . "' action='../php/eliminar_cliente.php' method='post'>
                                     <input type='text' name='idCliente' value='" . $row['idCliente'] . "' hidden>
                                     <button class='delete-btn' onclick='eliminarUsuario(" . $row['idCliente'] . ")'>Eliminar</button>
                                 </form>";
