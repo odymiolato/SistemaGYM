@@ -59,7 +59,7 @@ include '../php/conexion.php';
         echo "
          <div class='main-content'>
          <div class='dashboard-header'>
-             <h1>Usuario</h1>
+             <h1>Personas</h1>
              <div class='insert-form'>
                  <h2>Actualizar Persona</h2>
                  <form action='../php/actualizar_persona.php' method='post'>

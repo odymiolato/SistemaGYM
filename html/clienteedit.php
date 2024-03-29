@@ -59,15 +59,15 @@ include '../php/conexion.php';
         echo "
          <div class='main-content'>
          <div class='dashboard-header'>
-             <h1>Usuario</h1>
+             <h1>Clientes</h1>
              <div class='insert-form'>
-                 <h2>Actualizar Usuario</h2>
+                 <h2>Actualizar Clientes</h2>
                  <form action='../php/actualizar_cliente.php' method='post'>
 
                  <label for='idPersona'>ID Persona:</label><br>
                  <div class='input-btn-bus'>
                      <input type='text' value='" . $row['idCliente'] . "' id='idPersona' name='idPersona' required readonly>
-                     <button class='boton-lupa' desabled type='button' onclick='openModal(1)'><i class='fas fa-search'></i></button>
+                     <button class='boton-lupa' disabled type='button' onclick='openModal(1)'><i class='fas fa-search'></i></button>
                  </div>
 
 
@@ -82,8 +82,8 @@ include '../php/conexion.php';
             
                      <label for='estado'>Estado:</label><br>
                      <select id='estado' name='estado' required>
-                     <option ".($row['estado']== 1 ? 'selected' : '')."  value='1'>Activo</option>
-                     <option ".($row['estado']== 0 ? 'selected' : '')."  value='0'>Inactivo</option>
+                     <option " . ($row['estado'] == 1 ? 'selected' : '') . "  value='1'>Activo</option>
+                     <option " . ($row['estado'] == 0 ? 'selected' : '') . "  value='0'>Inactivo</option>
                      </select><br>
                      <input type='text' name='idUsuario' value='" . $codigo . "' hidden>
                      <input type='submit' value='Actualizar' name='btn_insertar'>
@@ -93,8 +93,17 @@ include '../php/conexion.php';
      </div>     
          ";
         ?>
-
+        <div id="Modals" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="titulo-modal"></h2>
+                <ul id="lista">
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 
 </html>
+<script type="text/javascript" src="../js/modal.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
