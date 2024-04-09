@@ -146,21 +146,21 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
 th,
 td {
-    border: 1px solid var(--color-terciario);
+    border: 1px solid var(--color-primario);
     padding: 10px;
     text-align: left;
 }
 
 th {
-    background-color: var(--color-primario) ;
-    color: var(--color-secundario);
+    background-color: var(--color-terciario) ;
+    color: #FFF;
 }
 
 td{
-    color: var(--color-secundario);
+    background-color:  #FFF;
+    color: var(--color-primario);
 }
