@@ -20,8 +20,6 @@
             <details>
                 <summary>Procesos</summary>
                 <ul>
-                    <li><a href="#">Sesion Entrenamiento</a></li>
-                    <li><a href="#">Clase</a></li>
                     <li><a href="inventario.php">Inventario</a></li>
                     <li><a href="facturacion.php">Facturacion</a></li>
                 </ul>
@@ -42,8 +40,6 @@
                 <summary>Mantenimiento</summary>
                 <ul>
                     <li><a href="#">Cambios Usuario</a></li>
-                    <li><a href="#">Cambios Empleado</a></li>
-                    <li><a href="#">Cambios Cliente</a></li>
                     <li><a href="#">Cambios Membresia</a></li>
                 </ul>
             </details>

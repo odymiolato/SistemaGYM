@@ -75,6 +75,7 @@
                                     <input type="text" id="ID_Articulo" name="ID_Articulo" required readonly><br>
                                     <button class="boton-lupa" type="button" onclick="openModal(4)"><i class="fas fa-search"></i></button>
                                     <input type="text" id="NombreArt" name="NombreArt" required readonly><br>
+                                    <input type="text" id="PrecioArt" name="PrecioArt" required hidden><br>
                                     <input type="number" id="Cantidad" name="Cantidad" required><br>
                                     <button class="boton-lupa" type="button" onclick=""><i class="fas fa-check"></i></button>
                                 </div>
@@ -87,7 +88,8 @@
                                         <th>ID</th>
                                         <th>Nombre</th>
                                         <th>Precio</th>
-                                        <th>Acciones</th>
+                                        <th>Cantidad</th>
+                                        <th>importe</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -96,11 +98,6 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td></td>
                                     </tr>
                                     <tr>
@@ -108,8 +105,17 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>

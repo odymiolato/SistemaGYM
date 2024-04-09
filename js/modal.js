@@ -112,6 +112,9 @@ function select(id, accion, value = "") {
 			if (document.getElementById("NombreArt")) {
 				document.getElementById("NombreArt").value = value;
 			}
+			if (document.getElementById("PrecioArt")) {
+				document.getElementById("PrecioArt").value = value;
+			}
 			closeModal();
 			break;
 		default:
