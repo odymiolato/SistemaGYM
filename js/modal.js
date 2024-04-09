@@ -74,7 +74,7 @@ async function openModal(accion) {
 				const li = document.createElement("li");
 				li.textContent = `${articulo.Nombre} - ID ${articulo.ID_Articulo}`;
 				li.onclick = function () {
-					select(articulo.ID_Articulo, 4, articulo.Nombre);
+					select(articulo.ID_Articulo, 4, articulo.Nombre, articulo.Precio);
 				};
 				lista.appendChild(li);
 			});
@@ -89,7 +89,7 @@ function closeModal() {
 	document.getElementById("Modals").style.display = "none";
 }
 
-function select(id, accion, value = "") {
+function select(id, accion, value = "", precio = "") {
 	console.log(value);
 	switch (accion) {
 		case 1:
@@ -113,7 +113,7 @@ function select(id, accion, value = "") {
 				document.getElementById("NombreArt").value = value;
 			}
 			if (document.getElementById("PrecioArt")) {
-				document.getElementById("PrecioArt").value = value;
+				document.getElementById("PrecioArt").value = precio;
 			}
 			closeModal();
 			break;
