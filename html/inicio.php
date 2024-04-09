@@ -23,6 +23,7 @@
                     <li><a href="#">Sesion Entrenamiento</a></li>
                     <li><a href="#">Clase</a></li>
                     <li><a href="inventario.php">Inventario</a></li>
+                    <li><a href="facturacion.php">Facturacion</a></li>
                 </ul>
             </details>
             <details>

@@ -1,11 +1,9 @@
-/* Estableciendo una paleta de colores */
 :root {
     --color-primario: black; /* Negro para el fondo */
     --color-secundario: #efb810; /* Dorado para los acentos */
     --color-terciario: #333; /* Dorado para los acentos */
 }
 
-/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
@@ -258,7 +256,7 @@ canvas {
   }
   
   .cta:hover span {
-    stroke: var(--color-primario);
+    color: var(--color-primario);
   }
 
   .cta:active {

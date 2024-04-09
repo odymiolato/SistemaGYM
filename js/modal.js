@@ -62,19 +62,19 @@ async function openModal(accion) {
 			break;
 
 		case 4:
-			document.getElementById("titulo-modal").textContent ="Seleccionar Articulo";
+			document.getElementById("titulo-modal").textContent = "Seleccionar Articulo";
 
 			response = await fetch(
 				"http://localhost/SistemaGYM/php/Getarticulos.php"
 			);
 			data = await response.json();
-			console.log(data);
+
 
 			data.forEach((articulo) => {
 				const li = document.createElement("li");
 				li.textContent = `${articulo.Nombre} - ID ${articulo.ID_Articulo}`;
 				li.onclick = function () {
-					select(articulo.ID_Articulo, 4);
+					select(articulo.ID_Articulo, 4, articulo.Nombre);
 				};
 				lista.appendChild(li);
 			});
@@ -89,7 +89,8 @@ function closeModal() {
 	document.getElementById("Modals").style.display = "none";
 }
 
-function select(id, accion) {
+function select(id, accion, value = "") {
+	console.log(value);
 	switch (accion) {
 		case 1:
 			document.getElementById("idPersona").value = id;
@@ -108,6 +109,9 @@ function select(id, accion) {
 
 		case 4:
 			document.getElementById("ID_Articulo").value = id;
+			if (document.getElementById("NombreArt")) {
+				document.getElementById("NombreArt").value = value;
+			}
 			closeModal();
 			break;
 		default:
