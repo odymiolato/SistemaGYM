@@ -22,7 +22,7 @@
                 <ul>
                     <li><a href="#">Sesion Entrenamiento</a></li>
                     <li><a href="#">Clase</a></li>
-                    <li><a href="#">Inventario</a></li>
+                    <li><a href="inventario.php">Inventario</a></li>
                 </ul>
             </details>
             <details>

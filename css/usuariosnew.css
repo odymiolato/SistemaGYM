@@ -69,6 +69,9 @@
     border-radius: 20px;
 }
 
+.modal-content, ul {
+    color: black;
+}
 .close {
     color: #aaa;
     float: right;
