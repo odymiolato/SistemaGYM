@@ -7,12 +7,14 @@
     <title>Document</title>
     <style>
         @import url(../css/base.css);
+        @import url(../css/usuariosnew.css);
     </style>
 </head>
 
 <body>
     <div class="container">
         <aside class="sidebar-top">
+            <!-- Contenido de la barra superior, como un menú de navegación u otra información -->
         </aside>
         <aside class="sidebar-left">
             <img src="pngwing.com.png" alt="Logo" class="logo">
@@ -27,13 +29,11 @@
             <details>
                 <summary>Panel de Control</summary>
                 <ul>
-                    <li><a href="usuarios.php">Usuario</a></li>
-                    <li><a href="personas.php">Persona</a></li>
-                    <li><a href="posicion.php">Posicion</a></li>
-                    <li><a href="empleados.php">Empleado</a></li>
-                    <li><a href="clientes.php">Cliente</a></li>
-                    <li><a href="membresia.php">Membresia</a></li>
-                    <li><a href="articulos.php">Articulos</a></li>
+                    <li><a href="#">Usuario</a></li>
+                    <li><a href="#">Persona</a></li>
+                    <li><a href="#">Empleado</a></li>
+                    <li><a href="#">Cliente</a></li>
+                    <li><a href="#">Membresia</a></li>
                 </ul>
             </details>
             <details>
@@ -47,31 +47,29 @@
             </details>
 
         </aside>
-
         <div class="main-content">
-            <div class="main-content">
-                <div class="dashboard-header">
-                    <h1>Dashboard</h1>
-                </div>
-                <div class="dashboard-grid">
-                    <div class="card" id="card-1">Widget 1</div>
-                    <div class="card" id="card-2">Widget 2</div>
-                    <div class="card" id="card-3">Widget 3</div>
-                    <div class="card" id="card-4">Widget 4</div>
+            <div class="dashboard-header">
+                <h1>Usuario</h1>
+                <div class="insert-form">
+                    <h2>Nuevo Articulo</h2>
+                    <form action="../php/insertar_articulo.php" method="post">
+                        <label for="Nombre">Nombre:</label><br>
+                        <input type="text" id="Nombre" name="Nombre" required><br>
 
-                    <div class="card" id="card-pie-chart">
-                        <canvas id="pieChart"></canvas>
-                    </div>
-                    <div class="card" id="card-bar-chart">
-                        <canvas id="barChart"></canvas>
-                    </div>
-                    <!-- Añade más widgets según sea necesario -->
+                        <label for="Descripcion">Descripcion:</label><br>
+                        <input type="text" id="Descripcion" name="Descripcion" required><br>
+
+                        <label for="Precio">Precio:</label><br>
+                        <input type="text" id="Precio" name="Precio" required><br>
+                        <br>
+
+                        <input type="submit" value="Guardar" name="btn_insertar">
+                    </form>
                 </div>
             </div>
-
         </div>
+
     </div>
-    <script type="text/javascript" src="../js/graficos.js"></script>
 </body>
 
 </html>
