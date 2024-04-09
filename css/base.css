@@ -1,12 +1,22 @@
+/* Estableciendo una paleta de colores */
+:root {
+    --color-primario: black; /* Negro para el fondo */
+    --color-secundario: #efb810; /* Dorado para los acentos */
+    --color-terciario: #333; /* Dorado para los acentos */
+}
+
+/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #efb810;
+    background-color: var(--color-terciario);
+    color: white; /* Texto blanco para mayor contraste */
 }
 
 .container {
@@ -17,9 +27,9 @@ body {
 }
 
 .sidebar-top {
-    background-color: black; 
+    background-color: var(--color-primario);
     padding: 20px;
-    grid-column: 1 / -1; 
+    grid-column: 1 / -1;
     grid-row: 1;
 }
 
@@ -29,10 +39,11 @@ body {
     grid-row-start: 2;
 }
 
-
 .sidebar-left,
-.sidebar-right {
-    background-color: black;
+.sidebar-right,
+.footer {
+    background-color: var(--color-primario);
+    color: white; /* Texto blanco para mayor contraste */
     padding: 20px;
 }
 
@@ -49,8 +60,8 @@ body {
 .sidebar-left summary {
     cursor: pointer;
     padding: 5px 10px;
-    background-color: #efb810;
-    color: #fff;
+    background-color: var(--color-secundario);
+    color: white;
     border-radius: 5px;
 }
 
@@ -65,16 +76,15 @@ body {
 }
 
 .sidebar-left ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     padding: 5px 0;
     display: inline-block;
 }
 
 .sidebar-left ul li a:hover {
-    color: #666;
+    color: #ccc; /* Gris más claro para los enlaces al pasar el ratón */
 }
-
 
 .nav {
     list-style-type: none;
@@ -88,34 +98,36 @@ body {
 
 .nav a {
     text-decoration: none;
-    color: #ffffff;
+    color: white;
     display: block;
     padding: 5px 10px;
     border-radius: 5px;
-    background-color: black;
+    background-color: var(--color-secundario);
     transition: background-color 0.3s ease;
 }
 
 .nav a:hover {
-    background-color: #fff;
-    color: black;
+    background-color: white; /* Fondo blanco al pasar el ratón */
+    color: var(--color-secundario);
 }
 
 .main-content {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer {
-    background-color: black;
-    color: #fff;
+    background-color: var(--color-secundario);
+    color: white;
     padding: 10px;
     text-align: center;
     grid-column: span 3;
 }
 
-.logo {
-    display: block;
-    margin-bottom: 20px;
+.logo img {
+    filter: grayscale(100%) invert(100%) sepia(50%);
+    /* Convertir el logo a blanco y negro y luego aplicar un tono sepia para obtener el efecto dorado */
 }
 
 @media screen and (max-width: 768px) {
@@ -132,6 +144,7 @@ body {
         grid-column: span 1;
     }
 }
+
 
 .main-content {
     padding: 20px;
@@ -175,14 +188,14 @@ canvas {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    background-color: black;
+    background-color: #efb810;
     color: #fff;
     font-size: 20px;
     text-decoration: none;
 }
 
 .back-btn:hover {
-    background-color: black;
+    background-color: #efb810;
 }
 
 .back-btn:active {
@@ -218,9 +231,9 @@ canvas {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: black;
+    color: var(--color-secundario);
   }
-  
+
   .cta svg {
     position: relative;
     top: 0;
@@ -228,7 +241,7 @@ canvas {
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke: black;
+    stroke: var(--color-secundario);
     stroke-width: 2;
     transform: translateX(5px) scale(-1, 1);
     transition: all 0.3s ease;
@@ -236,13 +249,18 @@ canvas {
   
   .cta:hover:before {
     width: 100%;
-    background: black;
+    background: var(--color-secundario);
   }
   
   .cta:hover svg {
     transform: translateX(0px) scale(-1, 1);
+    stroke: var(--color-primario);
   }
   
+  .cta:hover span {
+    stroke: var(--color-primario);
+  }
+
   .cta:active {
     transform: scale(0.95);
   }

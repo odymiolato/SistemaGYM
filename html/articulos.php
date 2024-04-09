@@ -61,7 +61,7 @@ include '../php/conexion.php';
             </div>
             <div class="main-content">
                 <div class="dashboard-header">
-                    <h1>Posicion</h1>
+                    <h1>Articulos</h1>
                 </div>
             </div>
             <div class="table-header">
@@ -94,7 +94,7 @@ include '../php/conexion.php';
                             echo "<td>" . $row['Precio'] . "</td>";
 
                             echo "<td><div style='display:flex;'>";
-                            echo "<form id='eliminar" . $row['ID_Articulo'] . "' action='clienteedit.php' method='post'>
+                            echo "<form id='eliminar" . $row['ID_Articulo'] . "' action='articuloedit.php' method='post'>
                                     <input type='text' name='ID_Articulo' value='" . $row['ID_Articulo'] . "' hidden>
                                     <button class='edit-btn' onclick='editarUsuario(" . $row['ID_Articulo'] . ")'>Editar</button>
                                 </form>";

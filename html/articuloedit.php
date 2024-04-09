@@ -1,3 +1,6 @@
+<?php
+include '../php/conexion.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,27 +50,36 @@
             </details>
 
         </aside>
-        <div class="main-content">
-            <div class="dashboard-header">
-                <h1>Articulos</h1>
-                <div class="insert-form">
-                    <h2>Nuevo Articulo</h2>
-                    <form action="../php/insertar_articulo.php" method="post">
-                        <label for="Nombre">Nombre:</label><br>
-                        <input type="text" id="Nombre" name="Nombre" required><br>
+        <?php
+        $codigo = $_POST['ID_Articulo'];
+        $sql = "SELECT * FROM Articulos WHERE ID_Articulo = $codigo";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
 
-                        <label for="Descripcion">Descripcion:</label><br>
-                        <input type="text" id="Descripcion" name="Descripcion" required><br>
+        echo "
+         <div class='main-content'>
+         <div class='dashboard-header'>
+             <h1>Articulos</h1>
+             <div class='insert-form'>
+                 <h2>Actualizar Articulo</h2>
+                 <form action='../php/actualizar_articulo.php' method='post'>
+                 <label for='Nombre'>Nombre:</label><br>
+                 <input type='text' value = " . $row['Nombre'] . " id='Nombre' name='Nombre' required><br>
 
-                        <label for="Precio">Precio:</label><br>
-                        <input type="text" id="Precio" name="Precio" required><br>
-                        <br>
+                 <label for='Descripcion'>Descripcion:</label><br>
+                 <input type='text' value = " . $row['Descripcion'] . " id='Descripcion' name='Descripcion' required><br>
 
-                        <input type="submit" value="Guardar" name="btn_insertar">
-                    </form>
-                </div>
-            </div>
-        </div>
+                 <label for='Precio'>Precio:</label><br>
+                 <input type='text' value = " . $row['Precio'] . " id='Precio' name='Precio' required><br>
+                 <br>
+                 <input type='text' name='ID_Articulo' value='" . $codigo . "' hidden>
+                 <input type='submit' value='Actualizar' name='btn_insertar'>
+                 </form>
+             </div>
+         </div>
+     </div>     
+         ";
+        ?>
 
     </div>
 </body>

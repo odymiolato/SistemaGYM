@@ -1,3 +1,9 @@
+:root {
+    --color-primario: black;
+    --color-secundario: #efb810;
+    --color-terciario: #333;
+}
+
 .table-header {
     display: flex;
     justify-content: right;
@@ -10,13 +16,13 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    background-color: black;
+    background-color: var(--color-primario);
     color: #FFF;
     font-size: 20px;
 }
 
 .new-btn:hover {
-    background-color: #333;
+    background-color: #555;
 }
 
 table {
@@ -27,21 +33,19 @@ table {
 
 th,
 td {
-    border: 1px solid #333;
+    border: 1px solid var(--color-terciario);
     padding: 10px;
     text-align: left;
 }
 
 th {
-    background-color: black ;
-    color: #fff;
+    background-color: var(--color-primario) ;
+    color: var(--color-secundario);
 }
+
 td{
-    color: black;
+    color: var(--color-secundario);
 }
-/* tr:nth-child(even) {
-    background-color: #f2f2f2;
-} */
 
 .edit-btn,
 .delete-btn {
@@ -50,14 +54,14 @@ td{
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    background-color: black;
+    background-color: var(--color-primario);
     color: #fff;
     text-decoration: none;
     display: inline-block;
 }
 
 .delete-btn {
-    background-color: black;
+    background-color: var(--color-primario);
     margin-right: 5px;
 }
 
@@ -67,8 +71,7 @@ td{
 }
 
 
-.edit-btn:hover,
-.delete-btn:hover {
+.edit-btn:hover{
     background-color: #555;
 }
 
