@@ -71,10 +71,12 @@ include '../php/conexion.php';
                 <tbody>
                     <?php
                     $sql = "SELECT 
-                                inv.ID_Inventario ,
-                                (SELECT Nombre FROM Articulos AS art WHERE art.ID_Articulo = inv.ID_Articulo) AS NomArt,
-                                 inv.Cantidad_Disponible 
-                            FROM Inventario AS inv";
+                    art.ID_Articulo ,
+                    art.Nombre,(
+                                (SELECT  sum(inv.Cantidad_Disponible) FROM Inventario AS inv WHERE inv.tipmov = 1 AND inv.ID_Articulo = art.ID_Articulo) -  
+                                (SELECT  sum(inv.Cantidad_Disponible) FROM Inventario AS inv WHERE inv.tipmov = 0 AND inv.ID_Articulo = art.ID_Articulo)
+                                ) AS Existencia
+                FROM Articulos AS art";
 
                     $result = $conn->query($sql);
 
@@ -82,23 +84,9 @@ include '../php/conexion.php';
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td>" . $row['ID_Inventario'] . "</td>";
-                            echo "<td>" . $row['NomArt'] . "</td>";
-                            echo "<td>" . $row['Cantidad_Disponible'] . "</td>";
-    
-                            // echo "<td>" . ($row['estado'] ? 'Activo' : 'Inactivo') . "</td>";
-
-                            // echo "<td><div style='display:flex;'>";
-                            // echo "<form id='eliminar" . $row['idUsuario'] . "' action='usuariosedit.php' method='post'>
-                            //         <input type='text' name='idUsuario' value='" . $row['idUsuario'] . "' hidden>
-                            //         <button class='edit-btn' onclick='editarUsuario(" . $row['idUsuario'] . ")'>Editar</button>
-                            //     </form>";
-                            // echo "<form id='editar" . $row['idUsuario'] . "' action='../php/eliminar_usuario.php' method='post'>
-                            //         <input type='text' name='idUsuario' value='" . $row['idUsuario'] . "' hidden>
-                            //         <button class='delete-btn' onclick='eliminarUsuario(" . $row['idUsuario'] . ")'>Eliminar</button>
-                            //     </form>";
-                            // echo "</div></td>";
-                            // echo "</tr>";
+                            echo "<td>" . $row['ID_Articulo'] . "</td>";
+                            echo "<td>" . $row['Nombre'] . "</td>";
+                            echo "<td>" . $row['Existencia'] . "</td>";
                         }
                     } else {
                         echo "<tr><td colspan='4'>El inventario esta vacio.</td></tr>";

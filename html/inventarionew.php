@@ -53,18 +53,18 @@
                 <h1>Inventario</h1>
                 <div class="insert-form">
                     <h2>Nuevo Movimiento</h2>
-                    <form action="../php/insertar_persona.php" method="post">
+                    <form action="../php/insertar_inventario.php" method="post">
                         <label for="ID_Articulo">Articulo:</label><br>
                         <div class="input-btn-bus">
                             <input type="text" id="ID_Articulo" name="ID_Articulo" required readonly>
                             <button class="boton-lupa" type="button" onclick="openModal(4)"><i class="fas fa-search"></i></button>
                         </div>
 
-                        <label for="apellido">Cantidad:</label><br>
-                        <input type="text" id="apellido" name="apellido" required><br>
+                        <label for="insertar_inventario">Cantidad:</label><br>
+                        <input type="text" id="Cantidad_Disponible" name="Cantidad_Disponible" required><br>
 
-                        <label for="estado">Tipo de Movimiento:</label><br>
-                        <select id="estado" name="estado" required>
+                        <label for="tipmov">Tipo de Movimiento:</label><br>
+                        <select id="tipmov" name="tipmov" required>
                             <option value="1">Entrada</option>
                             <option value="0">Salida</option>
                         </select><br>
