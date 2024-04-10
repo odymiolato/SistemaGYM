@@ -77,7 +77,7 @@
                                     <input type="text" id="NombreArt" name="NombreArt" required readonly><br>
                                     <input type="text" id="PrecioArt" name="PrecioArt" required hidden><br>
                                     <input type="number" id="Cantidad" name="Cantidad" required><br>
-                                    <button class="boton-lupa" type="button" onclick=""><i class="fas fa-check"></i></button>
+                                    <button class="boton-lupa" type="button" onclick="Aceptar()"><i class="fas fa-check"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -92,35 +92,8 @@
                                         <th>importe</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                <tbody id="table-body">
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -142,4 +115,5 @@
 
 </html>
 <script src="../js/modal.js"></script>
+<script src="../js/facturacion.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
