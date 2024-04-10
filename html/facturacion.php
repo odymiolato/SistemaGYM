@@ -55,8 +55,8 @@
                     <form action="../php/insertar_articulo.php" method="post">
                         <div class="fecha-user">
                             <div class="fecha">
-                                <label for="Nombre">Fecha:</label><br>
-                                <input type="date" id="Nombre" name="Nombre" required><br>
+                                <label for="fecha">Fecha:</label><br>
+                                <input type="date" id="fecha" name="fecha" required><br>
                             </div>
                             <div class="user">
                                 <label for="Nombre">Cliente:</label><br>
@@ -97,7 +97,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <input type="submit" value="Guardar" name="btn_insertar">
+                        <button type="button" class="btn_Guardar" name="btn_Guardar">Guardar</button>
                     </form>
                 </div>
             </div>
