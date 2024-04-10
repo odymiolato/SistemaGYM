@@ -1,10 +1,5 @@
 <?php
-$servername = "localhost"; 
-$username = "root"; 
-$password = ""; 
-$database = "gymproject"; 
-
-$conn = new mysqli($servername, $username, $password, $database);
+include 'conexion.php';
 
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
