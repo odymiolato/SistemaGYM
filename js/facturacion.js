@@ -69,6 +69,11 @@ function VentaDetalle(ID_Articulo, nombre, cantidad, precio) {
 
 async function Guardar() {
 
+    if(ListDetalle.length <= 0){
+        alert("Debe de agregar como minimo un articulo.");
+        return;
+    }
+
     const idcli = document.getElementById("idCliente").value;
     const nombreCli = document.getElementById("NombreCli").value;
     const fecha = document.getElementById("fecha").value;
