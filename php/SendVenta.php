@@ -11,31 +11,11 @@ if (isset($data) && !empty($data)) {
     $total = $data->total;
     $detalle = $data->detalle;
     $numfac = null;
+    $tineerror = false;
 
-    // try {
-    //     $conn->begin_transaction();
-    //     $sql = $conn->prepare("INSERT INTO Ventas (idCliente, nombreCli, fecha, total) VALUES (?, ?, STR_TO_DATE(?, '%m-%d-%Y'), ?)");
-    //     $sql->bind_param("issi", $idcli, $nombreCli, $fecha, $total);
-
-    //     if ($sql->execute()) {
-    //         $numfac = $sql->insert_id;
-
-    //         foreach ($detalle as $item) {
-    //             $sql = $conn->prepare("INSERT INTO Ventas_detalle (numfac, ID_Articulo, precio, cantidad, ilmporte) VALUES (?, ?, ?, ?, ?)");
-    //             $sql->bind_param('iiiii', $item->ID_Articulo, $item->ID_Articulo, $item->precio, $item->cantidad, $item->importe);
-    //             if (!($sql->execute())) {
-    //                 echo json_encode("Error al insertar datos en la tabla Ventas_detalle.");
-    //             }
-    //         }
-    //     } else {
-    //         echo json_encode("Error al insertar datos en la tabla Ventas.");
-    //     }
-    //     $conn->commit();
-    // } catch (Exception $EX) {
-    //     echo json_encode($EX);
-    //     $conn->rollback();
-    // }
-    $sql = $conn->prepare("INSERT INTO Ventas (idCliente, nombreCli, fecha, total) VALUES (?, ?, STR_TO_DATE(?, '%m-%d-%Y'), ?)");
+    try {
+        $conn->begin_transaction();
+        $sql = $conn->prepare("INSERT INTO Ventas (idCliente, nombreCli, fecha, total) VALUES (?, ?, STR_TO_DATE(?, '%m-%d-%Y'), ?)");
         $sql->bind_param("issi", $idcli, $nombreCli, $fecha, $total);
 
         if ($sql->execute()) {
@@ -51,7 +31,14 @@ if (isset($data) && !empty($data)) {
         } else {
             echo json_encode("Error al insertar datos en la tabla Ventas.");
         }
+        $conn->commit();
+    } catch (Exception $EX) {
+        echo json_encode($EX);
+        $conn->rollback();
+        $tineerror = true;
+    }
 } else {
     echo json_encode("No se proporcionaron datos válidos.");
 }
 $conn->close();
+if($tineerror){ echo json_encode("Ha ocurrido un error, por lo tanto se a echo un rolback a la transaccion.");}
