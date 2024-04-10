@@ -79,6 +79,25 @@ async function openModal(accion) {
 				lista.appendChild(li);
 			});
 			break;
+		case 5:
+			document.getElementById("titulo-modal").textContent = "Seleccionar Cliente";
+
+			response = await fetch(
+				"http://localhost/SistemaGYM/php/Getclientes.php"
+			);
+			data = await response.json();
+			console.log(data);
+
+
+			data.forEach((cliente) => {
+				const li = document.createElement("li");
+				li.textContent = `${cliente.nombre} - ID ${cliente.idCliente}`;
+				li.onclick = function () {
+					select(cliente.idCliente, 5, cliente.nombre);
+				};
+				lista.appendChild(li);
+			});
+			break;
 
 		default:
 			break;
@@ -114,6 +133,13 @@ function select(id, accion, value = "", precio = "") {
 			}
 			if (document.getElementById("PrecioArt")) {
 				document.getElementById("PrecioArt").value = precio;
+			}
+			closeModal();
+			break;
+		case 5:
+			document.getElementById("idCliente").value = id;
+			if (document.getElementById("NombreCli")) {
+				document.getElementById("NombreCli").value = value;
 			}
 			closeModal();
 			break;

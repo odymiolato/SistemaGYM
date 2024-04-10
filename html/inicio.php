@@ -15,7 +15,7 @@
         <aside class="sidebar-top">
         </aside>
         <aside class="sidebar-left">
-            <img src="pngwing.com.png" alt="Logo" class="logo">
+            <img src="../img/Logo.png" alt="Logo" class="logo">
 
             <details>
                 <summary>Procesos</summary>

@@ -61,9 +61,9 @@
                             <div class="user">
                                 <label for="Nombre">Cliente:</label><br>
                                 <div>
-                                    <input type="text" id="idPersona" name="idPersona" required readonly><br>
-                                    <button class="boton-lupa" type="button" onclick="openModal(4)"><i class="fas fa-search"></i></button>
-                                    <input type="text" id="Nombre" name="Nombre" required value="Al Portador"><br>
+                                    <input type="text" id="idCliente" name="idCliente" required readonly><br>
+                                    <button class="boton-lupa" type="button" onclick="openModal(5)"><i class="fas fa-search"></i></button>
+                                    <input type="text" id="NombreCli" name="NombreCli" required value="Al Portador"><br>
                                 </div>
                             </div>
 
