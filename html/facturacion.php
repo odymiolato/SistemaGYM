@@ -78,6 +78,7 @@
                                     <input type="text" id="PrecioArt" name="PrecioArt" required hidden><br>
                                     <input type="number" id="Cantidad" name="Cantidad" required><br>
                                     <button class="boton-lupa" type="button" onclick="Aceptar()"><i class="fas fa-check"></i></button>
+                                    <button class="boton-lupa" type="button" onclick=""><i class="fas fa-close"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +98,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <button type="button" class="btn_Guardar" name="btn_Guardar">Guardar</button>
+                        <button type="button" class="btn_Guardar" onclick="Guardar()" name="btn_Guardar">Guardar</button>
                     </form>
                 </div>
             </div>

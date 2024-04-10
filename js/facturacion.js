@@ -72,12 +72,24 @@ async function Guardar() {
     const idcli = document.getElementById("idCliente").value;
     const nombreCli = document.getElementById("NombreCli").value;
     const fecha = document.getElementById("fecha").value;
+    let total = 0;
 
+    ListDetalle.forEach((element) => {
+        total += element.importe;
+    });
     const venta = {
         idcli: idcli,
         nombreCli: nombreCli,
         fecha: fecha,
+        total: total,
         detalle: ListDetalle,
     }
+    console.log(venta);
 
+    // const response = await fetch(
+    //     'http://localhost/SistemaGYM/php/SendVenta.php',{
+    //         method: "POST",
+    //         body: JSON.stringify(venta)
+    //     }
+    // );
 }
