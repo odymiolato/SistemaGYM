@@ -391,6 +391,22 @@ CREATE TABLE cambiosMembresia(
     FOREIGN KEY(responsable) REFERENCES usuario(idUsuario)
 );
 
+CREATE TABLE Articulos (
+    ID_Articulo INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(255),
+    Descripcion TEXT,
+    Precio DECIMAL(10, 2)
+);
+
+CREATE TABLE Inventario (
+    ID_Inventario INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Articulo INT,
+    Cantidad_Disponible INT,
+    tipmov BOOLEAN,
+    FOREIGN KEY (ID_Articulo) REFERENCES Articulos(ID_Articulo)
+);
+
+
 
 -- select * from information_schema.TABLES
 --     INSERT INTO usuario (usuario, psw, estado)
