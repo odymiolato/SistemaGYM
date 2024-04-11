@@ -17,3 +17,6 @@ CREATE TABLE Ventas_detalle(
 	FOREIGN KEY (ID_Articulo) REFERENCES Articulos(ID_Articulo),
     FOREIGN KEY (numfac) REFERENCES Ventas(numfac)
 );
+
+-- menu
+-- https://codepen.io/Creaticode/pen/jOXpzd
