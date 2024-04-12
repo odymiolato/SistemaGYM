@@ -20,35 +20,36 @@ include '../php/conexion.php';
             <!-- Contenido de la barra superior, como un menú de navegación u otra información -->
         </aside>
         <aside class="sidebar-left">
-            <img src="pngwing.com.png" alt="Logo" class="logo">
+            <img src="../img/Logo.png" alt="Logo" class="logo">
 
-            <details>
-                <summary>Procesos</summary>
-                <ul>
-                    <li><a href="#">Sesion Entrenamiento</a></li>
-                    <li><a href="#">Clase</a></li>
-                </ul>
-            </details>
-            <details>
-                <summary>Panel de Control</summary>
-                <ul>
-                    <li><a href="#">Usuario</a></li>
-                    <li><a href="#">Persona</a></li>
-                    <li><a href="#">Empleado</a></li>
-                    <li><a href="#">Cliente</a></li>
-                    <li><a href="#">Membresia</a></li>
-                </ul>
-            </details>
-            <details>
-                <summary>Mantenimiento</summary>
-                <ul>
-                    <li><a href="#">Cambios Usuario</a></li>
-                    <li><a href="#">Cambios Empleado</a></li>
-                    <li><a href="#">Cambios Cliente</a></li>
-                    <li><a href="#">Cambios Membresia</a></li>
-                </ul>
-            </details>
-
+            <ul id="accordion" class="accordion">
+                <li>
+                    <div class="link"><i class="fa fa-tasks"></i>Procesos<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li><a href="inventario.php">Inventario</a></li>
+                        <li><a href="facturacion.php">Facturacion</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="link"><i class="fa-solid fa-plus"></i>Panel de Control<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li><a href="usuarios.php">Usuario</a></li>
+                        <li><a href="personas.php">Persona</a></li>
+                        <li><a href="posicion.php">Posicion</a></li>
+                        <li><a href="empleados.php">Empleado</a></li>
+                        <li><a href="clientes.php">Cliente</a></li>
+                        <li><a href="membresia.php">Membresia</a></li>
+                        <li><a href="articulos.php">Articulos</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="link"><i class="fa fa-wrench"></i>Mantenimiento<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li><a href="#">Cambios Usuario</a></li>
+                        <li><a href="#">Cambios Membresia</a></li>
+                    </ul>
+                </li>
+            </ul>
         </aside>
         <?php
         $codigo = $_POST['idPosicion'];
@@ -78,8 +79,8 @@ include '../php/conexion.php';
 
                         <label for='estado'>Estado:</label><br>
                         <select id='estado' name='estado' required>
-                        <option ".($row['estado']== 1 ? 'selected' : '')."  value='1'>Activo</option>
-                        <option ".($row['estado']== 0 ? 'selected' : '')."  value='0'>Inactivo</option>
+                        <option " . ($row['estado'] == 1 ? 'selected' : '') . "  value='1'>Activo</option>
+                        <option " . ($row['estado'] == 0 ? 'selected' : '') . "  value='0'>Inactivo</option>
                         </select><br>
  
                  <input type='text' name='idPosicion' value='" . $row['idPosicion'] . "' hidden>    

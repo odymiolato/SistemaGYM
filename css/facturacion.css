@@ -3,6 +3,7 @@
     --color-secundario: #efb810;
     --color-terciario: #333;
     --color-gris-claro:#fafafa;
+    --color-font:#fff;
 }
 
 .form-facturacion {
@@ -15,7 +16,7 @@
 .form-facturacion h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: var(--color-gris-claro);
+    color: var(--color-font);
 }
 
 .form-facturacion label {
