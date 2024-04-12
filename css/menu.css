@@ -55,7 +55,7 @@ body {
 
 .sidebar a:hover{
     color:#fff;
-    background-color: rgb(53, 123, 255);
+    background-color: #f90;
     border-radius: 7px;
     font-weight: bold;
     transition: .7s;
