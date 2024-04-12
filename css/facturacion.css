@@ -2,6 +2,7 @@
     --color-primario: black;
     --color-secundario: #efb810;
     --color-terciario: #333;
+    --color-gris-claro:#fafafa;
 }
 
 .form-facturacion {
@@ -14,11 +15,11 @@
 .form-facturacion h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #fff;
+    color: var(--color-gris-claro);
 }
 
 .form-facturacion label {
-    color: #fff;
+    color: var(--color-gris-claro);
 }
 
 
@@ -27,7 +28,7 @@
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #fff;
+    background-color: var(--color-gris-claro);
     border: none;
     border-radius: 3px;
     color: black;
@@ -36,7 +37,7 @@
 
 .form-facturacion .btn_Guardar:hover {
     background-color: #efb810;
-    COLOR: #fff;
+    COLOR: var(--color-gris-claro);
 }
 
 .form-facturacion input[type="text"],
@@ -51,6 +52,7 @@
     border-radius: 3px;
     box-sizing: border-box;
     margin-top: 8px;
+    background-color: var(--color-gris-claro);
 }
 
 .fecha-user {
@@ -130,7 +132,7 @@ ul {
     font-size: 24px;
     width: 50px;
     height: 40px;
-    background-color: #fff;
+    background-color: var(--color-gris-claro);
     color: black;
     border: none;
     border-radius: 6px;
@@ -143,7 +145,7 @@ ul {
 
 .boton-lupa:hover {
     background-color: #efb810;
-    color: #fff;
+    color: var(--color-gris-claro);
 }
 
 .detalle {
@@ -151,7 +153,7 @@ ul {
     display: flex;
     float: left;
     height: 500px;
-    background: #fff;
+    background: var(--color-gris-claro);
     overflow: auto;
 }
 
@@ -178,10 +180,10 @@ td {
 th {
     margin: 0;
     background-color: var(--color-terciario);
-    color: #FFF;
+    color: var(--color-gris-claro);
 }
 
 td {
-    background-color: #FFF;
+    background-color: var(--color-gris-claro);
     color: var(--color-primario);
 }

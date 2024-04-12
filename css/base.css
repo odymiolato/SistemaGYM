@@ -1,7 +1,8 @@
 :root {
-  --color-primario: black; /* Negro para el fondo */
-  --color-secundario: #efb810; /* Dorado para los acentos */
-  --color-terciario: #333; /* Dorado para los acentos */
+  --color-primario: black; 
+  --color-secundario: #efb810; 
+  --color-terciario: #333;
+  --color-gris-claro:#ccc;
 }
 
 * {
@@ -18,7 +19,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: var(--color-terciario);
-  color: white;
+  color: var(--color-gris-claro);
 }
 
 .container {
@@ -42,7 +43,7 @@ body {
 
 .sidebar-left{
   background-color: var(--color-primario);
-  color: white;
+  color: var(--color-gris-claro);
   width: 15em;
 }
 
@@ -60,7 +61,7 @@ body {
   cursor: pointer;
   padding: 5px 10px;
   background-color: var(--color-secundario);
-  color: white;
+  color: var(--color-gris-claro);
   border-radius: 5px;
 }
 
@@ -74,7 +75,7 @@ body {
 }
 
 .sidebar-left ul li a {
-  color: white;
+  color: var(--color-gris-claro);
   text-decoration: none;
   padding: 5px 0;
   display: inline-block;
@@ -96,7 +97,7 @@ body {
 
 .nav a {
   text-decoration: none;
-  color: white;
+  color: var(--color-gris-claro);
   display: block;
   padding: 5px 10px;
   border-radius: 5px;
@@ -105,7 +106,7 @@ body {
 }
 
 .nav a:hover {
-  background-color: white;
+  background-color: var(--color-gris-claro);
   color: var(--color-secundario);
 }
 
@@ -117,7 +118,7 @@ body {
 
 .footer {
   background-color: var(--color-secundario);
-  color: white;
+  color: var(--color-gris-claro);
   padding: 10px;
   text-align: center;
   grid-column: span 3;
@@ -183,7 +184,7 @@ canvas {
   border-radius: 3px;
   cursor: pointer;
   background-color: #efb810;
-  color: #fff;
+  color: var(--color-gris-claro);
   font-size: 20px;
   text-decoration: none;
 }

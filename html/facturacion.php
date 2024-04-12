@@ -8,6 +8,7 @@
     <style>
         @import url(../css/base.css);
         @import url(../css/facturacion.css);
+        @import url(../css/menuarc.css);
     </style>
 </head>
 
@@ -17,9 +18,39 @@
             <!-- Contenido de la barra superior, como un menú de navegación u otra información -->
         </aside>
         <aside class="sidebar-left">
-            <img src="pngwing.com.png" alt="Logo" class="logo">
+            <img src="../img/Logo.png" alt="Logo" class="logo">
 
-            <details>
+            <ul id="accordion" class="accordion">
+                <li>
+                    <div class="link"><i class="fa fa-tasks"></i>Procesos<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li><a href="inventario.php">Inventario</a></li>
+                        <li><a href="facturacion.php">Facturacion</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="link"><i class="fa-solid fa-plus"></i>Panel de Control<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li><a href="usuarios.php">Usuario</a></li>
+                        <li><a href="personas.php">Persona</a></li>
+                        <li><a href="posicion.php">Posicion</a></li>
+                        <li><a href="empleados.php">Empleado</a></li>
+                        <li><a href="clientes.php">Cliente</a></li>
+                        <li><a href="membresia.php">Membresia</a></li>
+                        <li><a href="articulos.php">Articulos</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="link"><i class="fa fa-wrench"></i>Mantenimiento<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li><a href="#">Cambios Usuario</a></li>
+                        <li><a href="#">Cambios Membresia</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+            <!-- <details>
                 <summary>Procesos</summary>
                 <ul>
                     <li><a href="#">Sesion Entrenamiento</a></li>
@@ -44,7 +75,7 @@
                     <li><a href="#">Cambios Cliente</a></li>
                     <li><a href="#">Cambios Membresia</a></li>
                 </ul>
-            </details>
+            </details> -->
 
         </aside>
         <div class="main-content">
@@ -94,7 +125,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="table-body">
-                                    
+
                                 </tbody>
                             </table>
                         </div>
@@ -117,4 +148,5 @@
 </html>
 <script src="../js/modal.js"></script>
 <script src="../js/facturacion.js"></script>
+<script type="text/javascript" src="../js/accordion.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
