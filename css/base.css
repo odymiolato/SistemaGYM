@@ -12,7 +12,7 @@
 .logo {
   width: 100px !important;
   height: 100px !important;
-  margin-left: 1.7em;
+  margin-left: 4.3em;
 }
 
 body {
@@ -67,7 +67,6 @@ body {
 .sidebar-left ul {
   list-style-type: none;
   padding: 0;
-  margin-left: 20px;
 }
 
 .sidebar-left ul li {

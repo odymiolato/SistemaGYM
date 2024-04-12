@@ -46,34 +46,6 @@
                     </ul>
                 </li>
             </ul>
-
-            <!-- <details>
-                <summary>Procesos</summary>
-                <ul>
-                    <li><a href="inventario.php">Inventario</a></li>
-                    <li><a href="facturacion.php">Facturacion</a></li>
-                </ul>
-            </details>
-            <details>
-                <summary>Panel de Control</summary>
-                <ul>
-                    <li><a href="usuarios.php">Usuario</a></li>
-                    <li><a href="personas.php">Persona</a></li>
-                    <li><a href="posicion.php">Posicion</a></li>
-                    <li><a href="empleados.php">Empleado</a></li>
-                    <li><a href="clientes.php">Cliente</a></li>
-                    <li><a href="membresia.php">Membresia</a></li>
-                    <li><a href="articulos.php">Articulos</a></li>
-                </ul>
-            </details>
-            <details>
-                <summary>Mantenimiento</summary>
-                <ul>
-                    <li><a href="#">Cambios Usuario</a></li>
-                    <li><a href="#">Cambios Membresia</a></li>
-                </ul>
-            </details> -->
-
         </aside>
 
         <div class="main-content">
