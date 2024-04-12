@@ -20,14 +20,14 @@
 
             <ul id="accordion" class="accordion">
                 <li>
-                    <div class="link"><i class="fa fa-paint-brush"></i>Procesos<i class="fa fa-chevron-down"></i></div>
+                    <div class="link"><i class="fa fa-tasks"></i>Procesos<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu">
                         <li><a href="inventario.php">Inventario</a></li>
                         <li><a href="facturacion.php">Facturacion</a></li>
                     </ul>
                 </li>
                 <li>
-                    <div class="link"><i class="fa fa-code"></i>Panel de Control<i class="fa fa-chevron-down"></i></div>
+                    <div class="link"><i class="fa-solid fa-plus"></i>Panel de Control<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu">
                         <li><a href="usuarios.php">Usuario</a></li>
                         <li><a href="personas.php">Persona</a></li>
@@ -39,13 +39,23 @@
                     </ul>
                 </li>
                 <li>
-                    <div class="link"><i class="fa fa-globe"></i>Mantenimiento<i class="fa fa-chevron-down"></i></div>
+                    <div class="link"><i class="fa fa-wrench"></i>Mantenimiento<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu">
                         <li><a href="#">Cambios Usuario</a></li>
                         <li><a href="#">Cambios Membresia</a></li>
                     </ul>
                 </li>
             </ul>
+
+            <!-- <details>
+                <summary>
+                    <i class="fa fa-tasks"></i>Procesos<i class="fa fa-chevron-down"></i>
+                </summary>
+                <ul >
+                        <li><a href="inventario.php">Inventario</a></li>
+                        <li><a href="facturacion.php">Facturacion</a></li>
+                    </ul>
+            </details> -->
         </aside>
 
         <div class="main-content">
