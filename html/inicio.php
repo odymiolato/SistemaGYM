@@ -7,6 +7,7 @@
     <title>Document</title>
     <style>
         @import url(../css/base.css);
+        @import url(../css/menuarc.css);
     </style>
 </head>
 
@@ -17,7 +18,36 @@
         <aside class="sidebar-left">
             <img src="../img/Logo.png" alt="Logo" class="logo">
 
-            <details>
+            <ul id="accordion" class="accordion">
+                <li>
+                    <div class="link"><i class="fa fa-paint-brush"></i>Procesos<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li><a href="inventario.php">Inventario</a></li>
+                        <li><a href="facturacion.php">Facturacion</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="link"><i class="fa fa-code"></i>Panel de Control<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li><a href="usuarios.php">Usuario</a></li>
+                        <li><a href="personas.php">Persona</a></li>
+                        <li><a href="posicion.php">Posicion</a></li>
+                        <li><a href="empleados.php">Empleado</a></li>
+                        <li><a href="clientes.php">Cliente</a></li>
+                        <li><a href="membresia.php">Membresia</a></li>
+                        <li><a href="articulos.php">Articulos</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="link"><i class="fa fa-globe"></i>Mantenimiento<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li><a href="#">Cambios Usuario</a></li>
+                        <li><a href="#">Cambios Membresia</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- <details>
                 <summary>Procesos</summary>
                 <ul>
                     <li><a href="inventario.php">Inventario</a></li>
@@ -42,7 +72,7 @@
                     <li><a href="#">Cambios Usuario</a></li>
                     <li><a href="#">Cambios Membresia</a></li>
                 </ul>
-            </details>
+            </details> -->
 
         </aside>
 
@@ -70,6 +100,8 @@
         </div>
     </div>
     <script type="text/javascript" src="../js/graficos.js"></script>
+    <script type="text/javascript" src="../js/accordion.js"></script>
 </body>
 
 </html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">

@@ -40,12 +40,10 @@ body {
   grid-row-start: 2;
 }
 
-.sidebar-left,
-.sidebar-right,
-.footer {
+.sidebar-left{
   background-color: var(--color-primario);
   color: white;
-  padding: 20px;
+  width: 15em;
 }
 
 .sidebar-left img {
