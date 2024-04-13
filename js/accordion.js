@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
             submenu.classList.toggle('show');
             item.classList.toggle('open');
 
-            // Cerrar otros submenús
             accordionItems.forEach(function(otherItem) {
                 if (otherItem !== item) {
                     otherItem.querySelector('.submenu').classList.remove('show');

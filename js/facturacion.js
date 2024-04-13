@@ -19,6 +19,13 @@ function Aceptar() {
 
 async function AddArt(idArt, cantidad) {
 
+    ListDetalle.forEach((element) => {
+        if (element.ID_Articulo === idArt) {
+
+            return;
+        }
+    });
+
     const response = await fetch(
         'http://localhost/SistemaGYM/php/GetOnearticulo.php', {
         method: 'POST',
@@ -41,11 +48,17 @@ async function AddArt(idArt, cantidad) {
     let colimporte = document.createElement('td');
 
     colid.textContent = detalle.ID_Articulo;
+    colid.setAttribute("name", "colid");
     colnom.textContent = detalle.nombre;
+    colnom.setAttribute("name", "colnom");
     colprecio.textContent = detalle.precio;
+    colprecio.setAttribute("name", "colprecio");
     colcant.textContent = detalle.cantidad;
+    colcant.setAttribute("name", "colcant");
     colimporte.textContent = detalle.importe;
+    colcant.setAttribute("name", "colcant");
 
+    tr.setAttribute("id", `${detalle.ID_Articulo}`);
     tr.appendChild(colid);
     tr.appendChild(colnom);
     tr.appendChild(colprecio);
@@ -54,6 +67,20 @@ async function AddArt(idArt, cantidad) {
 
     tabla.appendChild(tr);
     return;
+}
+
+function UpadateArt(codigo, cant) {
+    const tr = document.getElementById(codigo);
+    for (const child of tr.children) {
+        console.log(child.tagName);
+    }
+
+    for (var i in ListDetalle) {
+        if (ListDetalle[i].ID_Articulo == codigo) {
+            ListDetalle[i].cantidad = cant;
+            break;
+        }
+    }
 }
 
 function VentaDetalle(ID_Articulo, nombre, cantidad, precio) {
@@ -69,7 +96,7 @@ function VentaDetalle(ID_Articulo, nombre, cantidad, precio) {
 
 async function Guardar() {
 
-    if(ListDetalle.length <= 0){
+    if (ListDetalle.length <= 0) {
         alert("Debe de agregar como minimo un articulo.");
         return;
     }
@@ -82,6 +109,7 @@ async function Guardar() {
     ListDetalle.forEach((element) => {
         total += element.importe;
     });
+
     const venta = {
         idcli: idcli,
         nombreCli: nombreCli,
