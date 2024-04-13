@@ -11,6 +11,7 @@ include '../php/conexion.php';
     <style>
         @import url(../css/base.css);
         @import url(../css/usuariosnew.css);
+        @import url(../css/menuarc.css);
     </style>
 </head>
 

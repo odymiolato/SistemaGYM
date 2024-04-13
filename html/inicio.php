@@ -8,6 +8,7 @@
     <style>
         @import url(../css/base.css);
         @import url(../css/menuarc.css);
+        @import url(../css/menuarc.css);
     </style>
 </head>
 
