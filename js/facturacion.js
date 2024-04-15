@@ -80,7 +80,8 @@ async function AddArt(idArt, cantidad) {
 function UpadateArt(codigo, cant) {
     const row = document.getElementById(`${codigo}`);
     const cells = row.getElementsByTagName('td');
-    cells[4].textContent = cant;
+    cells[3].textContent = cant;
+    cells[4].textContent =  parseFloat(cells[2].textContent) * cant;
     // console.log(cells[4]);
 
     for (var i in ListDetalle) {
