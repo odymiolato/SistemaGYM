@@ -48,14 +48,23 @@ async function AddArt(idArt, cantidad) {
 
     colid.textContent = detalle.ID_Articulo;
     colid.setAttribute("name", "colid");
+    colid.setAttribute("ondblclick",`editar(${detalle.ID_Articulo})`);
+
     colnom.textContent = detalle.nombre;
     colnom.setAttribute("name", "colnom");
+    colnom.setAttribute("ondblclick",`editar(${detalle.ID_Articulo})`);
+
     colprecio.textContent = detalle.precio;
     colprecio.setAttribute("name", "colprecio");
+    colprecio.setAttribute("ondblclick",`editar(${detalle.ID_Articulo})`);
+
     colcant.textContent = detalle.cantidad;
     colcant.setAttribute("name", "colcant");
+    colcant.setAttribute("ondblclick",`editar(${detalle.ID_Articulo})`);
+    
     colimporte.textContent = detalle.importe;
-    colcant.setAttribute("name", "colcant");
+    colimporte.setAttribute("name", "colimporte");
+    colimporte.setAttribute("ondblclick",`editar(${detalle.ID_Articulo})`);
 
     tr.setAttribute("id", `${detalle.ID_Articulo}`);
     tr.appendChild(colid);
@@ -82,6 +91,10 @@ function UpadateArt(codigo, cant) {
     }
     // console.log(ListDetalle);
     return true;
+}
+
+function editar(codigo){
+    console.log(`Hola elemento ${codigo}`);
 }
 
 function VentaDetalle(ID_Articulo, nombre, cantidad, precio) {
