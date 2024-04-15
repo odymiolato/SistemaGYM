@@ -19,13 +19,12 @@ function Aceptar() {
 
 async function AddArt(idArt, cantidad) {
 
-    ListDetalle.forEach((element) => {
-        if (element.ID_Articulo === idArt) {
-
+    if(ListDetalle.length > 0){
+        if(UpadateArt(idArt,cantidad)){
             return;
         }
-    });
-
+    }
+    
     const response = await fetch(
         'http://localhost/SistemaGYM/php/GetOnearticulo.php', {
         method: 'POST',
@@ -37,7 +36,7 @@ async function AddArt(idArt, cantidad) {
     const detalle = VentaDetalle(data.ID_Articulo, data.Nombre, cantidad, data.Precio);
 
     ListDetalle.push(detalle);
-    console.log(ListDetalle);
+    // console.log(ListDetalle);
 
     const tabla = document.getElementById('table-body');
     const tr = document.createElement('tr');
@@ -70,10 +69,10 @@ async function AddArt(idArt, cantidad) {
 }
 
 function UpadateArt(codigo, cant) {
-    const tr = document.getElementById(codigo);
-    for (const child of tr.children) {
-        console.log(child.tagName);
-    }
+    const row = document.getElementById(`${codigo}`);
+    const cells = row.getElementsByTagName('td');
+    cells[4].textContent = cant;
+    // console.log(cells[4]);
 
     for (var i in ListDetalle) {
         if (ListDetalle[i].ID_Articulo == codigo) {
@@ -81,6 +80,8 @@ function UpadateArt(codigo, cant) {
             break;
         }
     }
+    // console.log(ListDetalle);
+    return true;
 }
 
 function VentaDetalle(ID_Articulo, nombre, cantidad, precio) {

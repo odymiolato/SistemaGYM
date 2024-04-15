@@ -14,8 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $creador = $_SESSION['idUsuario'];
     $estado = $_POST["estado"];
 
+    // $sql = "INSERT INTO membresia(nombre, DiasDuracion, estado, creador, fechaCreacion) 
+    // VALUES ('$nombre', '$DiasDuracion', '$estado', '$creador', '$fechaCreado')";
     $sql = "INSERT INTO membresia(nombre, DiasDuracion, estado, creador, fechaCreacion) 
-    VALUES ('$nombre', '$DiasDuracion', '$estado', '$creador', '$fechaCreado')";
+    VALUES ('$nombre', '$DiasDuracion', '$estado', '$creador', DATE(NOW()) )";
+    
     // echo $sql;
     // return;
 
