@@ -5,6 +5,7 @@ h1, h2, strong{
   color: #FFFFFF;
   text-shadow: #040f16;
 }
+
 .btn {
   width: 100px;
   height: 30px;
@@ -186,7 +187,7 @@ background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22h
     }
 
     .welcome i{
-      font-size: 65px;.
+      font-size: 65px;
       color: white;
       font-weight: normal;
     }

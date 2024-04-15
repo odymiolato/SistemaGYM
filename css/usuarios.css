@@ -60,6 +60,7 @@ td{
     display: inline-block;
 }
 
+
 .delete-btn {
     background-color: var(--color-primario);
     margin-right: 5px;

@@ -51,6 +51,7 @@ box-shadow: 0px 7px 20px rgba(59, 22, 53, 0.2);
 }
 
 
+
 @media screen and (max-width:900px){
     .contenido-slider > img{
         width: 250px;
