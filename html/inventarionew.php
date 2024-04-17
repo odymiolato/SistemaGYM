@@ -59,3 +59,4 @@
 </html>
 <script src="../js/modal.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<script type="text/javascript" src="../js/accordion.js"></script>
