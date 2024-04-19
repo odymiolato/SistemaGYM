@@ -16,6 +16,13 @@ function Aceptar() {
 
 
     AddArt(ID_Articulo, cantidad);
+    limpiar();
+}
+
+function limpiar(){
+    document.getElementById("ID_Articulo").value = "";
+    document.getElementById("NombreArt").value = "";
+    document.getElementById("Cantidad").value = "";
 }
 
 async function GetExistencia(idArt,cantidad) {
