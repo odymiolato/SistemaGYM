@@ -78,8 +78,8 @@ include '../php/conexion.php';
                     $sql = "SELECT 
                     art.ID_Articulo ,
                     art.Nombre,(
-                                (SELECT  sum(inv.Cantidad_Disponible) FROM Inventario AS inv WHERE inv.tipmov = 1 AND inv.ID_Articulo = art.ID_Articulo) -  
-                                (SELECT  sum(inv.Cantidad_Disponible) FROM Inventario AS inv WHERE inv.tipmov = 0 AND inv.ID_Articulo = art.ID_Articulo)
+                                coalesce((SELECT  sum(inv.Cantidad_Disponible) FROM Inventario AS inv WHERE inv.tipmov = 1 AND inv.ID_Articulo = art.ID_Articulo),0) -  
+                                coalesce((SELECT  sum(inv.Cantidad_Disponible) FROM Inventario AS inv WHERE inv.tipmov = 0 AND inv.ID_Articulo = art.ID_Articulo),0)
                                 ) AS Existencia
                 FROM Articulos AS art";
 

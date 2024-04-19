@@ -82,8 +82,8 @@
 
         </div>
     </div>
-    <script type="text/javascript" src="../js/graficos.js"></script>
-    <script type="text/javascript" src="../js/accordion.js"></script>
+    <!-- <script type="text/javascript" src="../js/graficos.js"></script> -->
+    <!-- <script type="text/javascript" src="../js/accordion.js"></script> -->
 </body>
 
 </html>

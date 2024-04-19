@@ -78,11 +78,15 @@ async function AddArt(idArt, cantidad) {
 }
 
 function UpadateArt(codigo, cant) {
+
+    if(!document.getElementById(`${codigo}`)){
+        return;
+    }
+    
     const row = document.getElementById(`${codigo}`);
     const cells = row.getElementsByTagName('td');
     cells[3].textContent = cant;
     cells[4].textContent =  parseFloat(cells[2].textContent) * cant;
-    // console.log(cells[4]);
 
     for (var i in ListDetalle) {
         if (ListDetalle[i].ID_Articulo == codigo) {
@@ -90,7 +94,6 @@ function UpadateArt(codigo, cant) {
             break;
         }
     }
-    // console.log(ListDetalle);
     return true;
 }
 
