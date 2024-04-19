@@ -82,7 +82,7 @@ function UpadateArt(codigo, cant) {
     if(!document.getElementById(`${codigo}`)){
         return;
     }
-    
+
     const row = document.getElementById(`${codigo}`);
     const cells = row.getElementsByTagName('td');
     cells[3].textContent = cant;
@@ -112,10 +112,22 @@ function VentaDetalle(ID_Articulo, nombre, cantidad, precio) {
     return obj;
 }
 
-async function Guardar() {
+function validar(){
+    let nombrecli = document.getElementById('');
+    if(nombrecli.textContent === ""){
+        alert('El nombre del cliente no puede estar vacio...');
+        return false;
+    }
 
-    if (ListDetalle.length <= 0) {
-        alert("Debe de agregar como minimo un articulo.");
+    if (ListDetalle.length <= 0){
+        alert('Debe de ingrear como minimo un aritculo...');
+        return false;    
+    }
+    return true;
+}
+async function Guardar() {
+    
+    if (!validar()){
         return;
     }
 
