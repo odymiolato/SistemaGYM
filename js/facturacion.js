@@ -1,4 +1,15 @@
 const ListDetalle = [];
+const tabla = document.getElementById('table-body');
+
+/**
+ * @returns {void}
+ */
+function nuevo(){
+    document.getElementById("ID_Articulo").value = "";
+    document.getElementById("NombreArt").value = "";
+    document.getElementById("Cantidad").value = "";
+}
+
 function Aceptar() {
     let ID_Articulo = document.getElementById("ID_Articulo").value;
     let cantidad = document.getElementById("Cantidad").value;
@@ -19,13 +30,13 @@ function Aceptar() {
     limpiar();
 }
 
-function limpiar(){
+function limpiar() {
     document.getElementById("ID_Articulo").value = "";
     document.getElementById("NombreArt").value = "";
     document.getElementById("Cantidad").value = "";
 }
 
-async function GetExistencia(idArt,cantidad) {
+async function GetExistencia(idArt, cantidad) {
     const resp = await fetch(
         'http://localhost/SistemaGYM/php/GetExistenciaArt.php', {
         method: "POST",
@@ -49,7 +60,7 @@ async function GetExistencia(idArt,cantidad) {
 
 async function AddArt(idArt, cantidad) {
 
-    if(! await GetExistencia(idArt,cantidad)){
+    if (! await GetExistencia(idArt, cantidad)) {
         return;
     }
 
@@ -72,7 +83,6 @@ async function AddArt(idArt, cantidad) {
     ListDetalle.push(detalle);
     // console.log(ListDetalle);
 
-    const tabla = document.getElementById('table-body');
     const tr = document.createElement('tr');
     let colid = document.createElement('td');
     let colnom = document.createElement('td');
@@ -130,9 +140,37 @@ function UpadateArt(codigo, cant) {
     }
     return true;
 }
+/**
+ * @param {number} codigo 
+ * @returns {void}
+ */
+function eliminar() {
+    if(ListDetalle.length <= 0){
+        alert("El elemento debe estar agregado en la lista...")
+        return;
+    }
+
+    let codigo = document.getElementById('ID_Articulo').value;
+    
+    if (!document.getElementById(`${codigo}`)) {
+        return;
+    }
+
+    const row = document.getElementById(`${codigo}`);
+    tabla.removeChild(row);
+
+    let art = ListDetalle.find((item)=> item.ID_Articulo = codigo)
+    ListDetalle.pop(art);
+    limpiar();
+}
 
 function editar(codigo) {
-    console.log(`Hola elemento ${codigo}`);
+    const row = document.getElementById(`${codigo}`);
+    const cells = row.getElementsByTagName('td');
+
+    document.getElementById('ID_Articulo').value = cells[0].textContent;
+    document.getElementById('NombreArt').value = cells[1].textContent;
+    document.getElementById('Cantidad').value = cells[3].textContent;
 }
 
 function VentaDetalle(ID_Articulo, nombre, cantidad, precio) {
@@ -150,6 +188,11 @@ function validar() {
     let nombrecli = document.getElementById('NombreCli');
     if (nombrecli.value === "") {
         alert('El nombre del cliente no puede estar vacio...');
+        return false;
+    }
+
+    if (!document.getElementById('fecha')) {
+        alert('Debe de ingresar la fecha...')
         return false;
     }
 
@@ -183,10 +226,11 @@ async function Guardar() {
     }
     console.log(venta);
 
-    // const response = await fetch(
-    //     'http://localhost/SistemaGYM/php/SendVenta.php',{
-    //         method: "POST",
-    //         body: JSON.stringify(venta)
-    //     }
-    // );
+    const response = await fetch(
+        'http://localhost/SistemaGYM/php/SendVenta.php',{
+            method: "POST",
+            body: JSON.stringify(venta)
+        }
+    );
 }
+

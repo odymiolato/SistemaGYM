@@ -110,7 +110,7 @@
                                     <input type="text" id="PrecioArt" name="PrecioArt" required hidden><br>
                                     <input type="number" id="Cantidad" name="Cantidad" required><br>
                                     <button class="boton-lupa" type="button" onclick="Aceptar()"><i class="fas fa-check"></i></button>
-                                    <button class="boton-lupa" type="button" onclick=""><i class="fas fa-close"></i></button>
+                                    <button class="boton-lupa" type="button" onclick="eliminar()"><i class="fas fa-close"></i></button>
                                 </div>
                             </div>
                         </div>
