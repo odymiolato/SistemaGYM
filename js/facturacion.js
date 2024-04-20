@@ -1,13 +1,23 @@
-const ListDetalle = [];
+let ListDetalle = [];
 const tabla = document.getElementById('table-body');
 
 /**
  * @returns {void}
  */
-function nuevo(){
-    document.getElementById("ID_Articulo").value = "";
-    document.getElementById("NombreArt").value = "";
-    document.getElementById("Cantidad").value = "";
+function nuevo() {
+    // document.getElementById("ID_Articulo").value = "";
+    // document.getElementById("NombreArt").value = "";
+    // document.getElementById("Cantidad").value = "";
+    // document.getElementById("idClienteo").value = "";
+    // document.getElementById("NombreCli").value = "";
+    // document.getElementById("fecha").value = "";
+    ListDetalle = [];
+
+    tabla.querySelectorAll('tr').forEach(e => e.remove());
+
+    
+
+
 }
 
 function Aceptar() {
@@ -145,13 +155,13 @@ function UpadateArt(codigo, cant) {
  * @returns {void}
  */
 function eliminar() {
-    if(ListDetalle.length <= 0){
+    if (ListDetalle.length <= 0) {
         alert("El elemento debe estar agregado en la lista...")
         return;
     }
 
     let codigo = document.getElementById('ID_Articulo').value;
-    
+
     if (!document.getElementById(`${codigo}`)) {
         return;
     }
@@ -159,7 +169,7 @@ function eliminar() {
     const row = document.getElementById(`${codigo}`);
     tabla.removeChild(row);
 
-    let art = ListDetalle.find((item)=> item.ID_Articulo = codigo)
+    let art = ListDetalle.find((item) => item.ID_Articulo = codigo)
     ListDetalle.pop(art);
     limpiar();
 }
@@ -227,10 +237,10 @@ async function Guardar() {
     console.log(venta);
 
     const response = await fetch(
-        'http://localhost/SistemaGYM/php/SendVenta.php',{
-            method: "POST",
-            body: JSON.stringify(venta)
-        }
+        'http://localhost/SistemaGYM/php/SendVenta.php', {
+        method: "POST",
+        body: JSON.stringify(venta)
+    }
     );
 }
 
