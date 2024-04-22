@@ -50,6 +50,13 @@ include '../php/conexion.php';
                         <li><a href="#">Cambios Membresia</a></li>
                     </ul>
                 </li>
+                <li>
+                <div class="link"><i class="fa-solid fa-magnifying-glass"></i>Consultas<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li><a href="ventas.php">Ventas</a></li>
+                        <li><a href="#">Movimientos</a></li>
+                    </ul>
+                </li>
             </ul>
         </aside>
         <?php
