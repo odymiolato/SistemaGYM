@@ -9,7 +9,7 @@ function nuevo() {
     document.getElementById("NombreArt").value = "";
     document.getElementById("Cantidad").value = "";
     document.getElementById("idCliente").value = "";
-    document.getElementById("NombreCli").value = "";
+    document.getElementById("NombreCli").value = "Al Portador";
     document.getElementById("fecha").value = "";
     ListDetalle = [];
 
@@ -201,7 +201,7 @@ function validar() {
         return false;
     }
 
-    if (!document.getElementById('fecha')) {
+    if (document.getElementById('fecha').value === "") {
         alert('Debe de ingresar la fecha...')
         return false;
     }
@@ -216,7 +216,7 @@ async function Guardar() {
 
     if (!validar()) {
         return;
-    }
+    }    
 
     const idcli = document.getElementById("idCliente").value;
     const nombreCli = document.getElementById("NombreCli").value;
@@ -242,10 +242,7 @@ async function Guardar() {
         body: JSON.stringify(venta)
     }
     );
-
-    // let result = response.json();
-    // if(result){
-    //     nuevo()
-    // }
+    nuevo()
 }
 
+ 
