@@ -53,52 +53,58 @@ include '../php/conexion.php';
                 <li>
                     <div class="link"><i class="fa-solid fa-magnifying-glass"></i>Consultas<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu">
-                        <li><a href="#">Ventas</a></li>
+                        <li><a href="ventas.php">Ventas</a></li>
                         <li><a href="#">Movimientos</a></li>
                     </ul>
                 </li>
             </ul>
 
-
-
         </aside>
         <div class="main-content">
             <div class="main-content">
                 <div class="dashboard-header">
-                    <h1>Inventario</h1>
+                    <h1>Ventas</h1>
                 </div>
             </div>
             <div class="table-header">
-                <button class="new-btn" onclick="redirectToNewUserPage()">Nuevo Movimiento</button>
+                <!-- <button class="new-btn" onclick="redirectToNewUserPage()">Nuevo Movimiento</button> -->
+                <div class="filtro-container">
+                <input type="text" id="filtro" placeholder="Buscar...">
+                </div>
+                
             </div>
 
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Articulo</th>
-                        <th>Cantidad</th>
+                        <th>Factura</th>
+                        <th>Fecha</th>
+                        <th>Codigo Cliente</th>
+                        <th>Nombre Cliente</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $sql = "SELECT 
-                    art.ID_Articulo ,
-                    art.Nombre,(
-                                coalesce((SELECT  sum(inv.Cantidad_Disponible) FROM Inventario AS inv WHERE inv.tipmov = 1 AND inv.ID_Articulo = art.ID_Articulo),0) -  
-                                coalesce((SELECT  sum(inv.Cantidad_Disponible) FROM Inventario AS inv WHERE inv.tipmov = 0 AND inv.ID_Articulo = art.ID_Articulo),0)
-                                ) AS Existencia
-                FROM Articulos AS art";
+                                ventas.numfac,
+                                ventas.IdCliente,
+                                ventas.nombreCli,
+                                ventas.fecha,
+                                ventas.total
+                            FROM ventas ";
 
                     $result = $conn->query($sql);
 
 
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row['ID_Articulo'] . "</td>";
-                            echo "<td>" . $row['Nombre'] . "</td>";
-                            echo "<td>" . $row['Existencia'] . "</td>";
+                            echo "<tr class='fila-venta'>";
+                            echo "<td>" . $row['numfac'] . "</td>";
+                            echo "<td>" . $row['fecha'] . "</td>";
+                            echo "<td>" . $row['IdCliente'] . "</td>";
+                            echo "<td>" . $row['nombreCli'] . "</td>";
+                            echo "<td>" . $row['total'] . "</td>";
                         }
                     } else {
                         echo "<tr><td colspan='4'>El inventario esta vacio.</td></tr>";
@@ -125,6 +131,24 @@ include '../php/conexion.php';
                 myForm.submit();
                 console.log('Eliminar usuario con ID:', idUsuario);
             }
+            const filtroInput = document.getElementById('filtro');
+            const filasVentas = document.getElementsByClassName('fila-venta');
+
+
+            filtroInput.addEventListener('keyup', function() {
+                const filtro = filtroInput.value.toLowerCase();
+
+                for (let i = 0; i < filasVentas.length; i++) {
+                    const textoFila = filasVentas[i].innerText.toLowerCase();
+
+                    // Mostrar la fila si coincide con el filtro, ocultarla si no
+                    if (textoFila.includes(filtro)) {
+                        filasVentas[i].style.display = 'table-row';
+                    } else {
+                        filasVentas[i].style.display = 'none';
+                    }
+                }
+            });
         </script>
 </body>
 

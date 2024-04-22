@@ -6,7 +6,7 @@
 
 .table-header {
     display: flex;
-    justify-content: right;
+    justify-content: left;
     align-items: center;
     margin-bottom: 20px;
 }
@@ -80,4 +80,14 @@ td{
 .delete-btn:active {
     background-color: #222;
     transform: translateY(1px);
+}
+
+
+.filtro-container{
+    > input{
+        padding: 10px;
+        border-radius: 30px;
+        width: 32em;
+        box-shadow: 1px 1px 8px 1px #00000073;
+    }
 }
