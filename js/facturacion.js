@@ -5,12 +5,12 @@ const tabla = document.getElementById('table-body');
  * @returns {void}
  */
 function nuevo() {
-    // document.getElementById("ID_Articulo").value = "";
-    // document.getElementById("NombreArt").value = "";
-    // document.getElementById("Cantidad").value = "";
-    // document.getElementById("idClienteo").value = "";
-    // document.getElementById("NombreCli").value = "";
-    // document.getElementById("fecha").value = "";
+    document.getElementById("ID_Articulo").value = "";
+    document.getElementById("NombreArt").value = "";
+    document.getElementById("Cantidad").value = "";
+    document.getElementById("idCliente").value = "";
+    document.getElementById("NombreCli").value = "";
+    document.getElementById("fecha").value = "";
     ListDetalle = [];
 
     tabla.querySelectorAll('tr').forEach(e => e.remove());
@@ -242,5 +242,10 @@ async function Guardar() {
         body: JSON.stringify(venta)
     }
     );
+
+    // let result = response.json();
+    // if(result){
+    //     nuevo()
+    // }
 }
 
