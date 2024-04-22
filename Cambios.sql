@@ -18,5 +18,20 @@ CREATE TABLE Ventas_detalle(
     FOREIGN KEY (numfac) REFERENCES Ventas(numfac)
 );
 
+
+
+DELIMITER //
+
+CREATE TRIGGER movimiento_inventario AFTER INSERT ON Ventas_detalle 
+FOR EACH ROW
+BEGIN
+    INSERT INTO inventario (ID_Articulo, Cantidad_Disponible, tipmov)
+    VALUES (NEW.ID_Articulo, NEW.cantidad, 0);
+END;
+//
+
+DELIMITER ;
+
+
 -- menu
 -- https://codepen.io/Creaticode/pen/jOXpzd
