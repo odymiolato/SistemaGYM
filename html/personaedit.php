@@ -89,7 +89,7 @@ include '../php/conexion.php';
                  <input type='text' value=" . $row['telefono'] . " id='telefono' name='telefono' required><br>
 
                  <label for='email'>Email:</label><br>
-                 <input type='text' value=" . $row['email'] . " id='email' name='email' required><br>
+                 <input type='email' value=" . $row['email'] . " id='email' name='email' required><br>
 
                  <input type='text' name='idPersona' value='" . $row['idPersona'] . "' hidden>    
                  <input type='submit' value='Actualizar' name='btn_insertar'>

@@ -81,7 +81,7 @@
                         <input type="text" id="telefono" name="telefono" required><br>
 
                         <label for="email">Email:</label><br>
-                        <input type="text" id="email" name="email" required><br>
+                        <input type="email" id="email" name="email" required><br>
 
                         <input type="submit" value="Guardar" name="btn_insertar">
                     </form>
