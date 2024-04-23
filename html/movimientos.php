@@ -77,22 +77,22 @@ include '../php/conexion.php';
             <table>
                 <thead>
                     <tr>
-                        <th>Factura</th>
-                        <th>Fecha</th>
-                        <th>Codigo Cliente</th>
-                        <th>Nombre Cliente</th>
-                        <th class="number">Total</th>
+                        <th>Numero Transaccion</th>
+                        <th>Codigo Articulo</th>
+                        <th>Nombre Articulo</th>
+                        <th class="number">Cantidad</th>
+                        <th >Tipo Movimiento</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $sql = "SELECT 
-                                ventas.numfac,
-                                ventas.IdCliente,
-                                ventas.nombreCli,
-                                ventas.fecha,
-                                ventas.total
-                            FROM ventas ";
+                    $sql = "SELECT
+                                ID_Inventario,
+                                ID_Articulo, 
+                                (SELECT Nombre FROM articulos WHERE articulos.ID_Articulo = inventario.ID_Articulo)NombreArticulo,
+                                Cantidad_Disponible,
+                                (CASE WHEN tipmov = 1 THEN  'Entrada' ELSE 'Salidad' END)tipmov
+                            FROM inventario;";
 
                     $result = $conn->query($sql);
 
@@ -100,14 +100,14 @@ include '../php/conexion.php';
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr class='fila-venta'>";
-                            echo "<td>" . $row['numfac'] . "</td>";
-                            echo "<td>" . $row['fecha'] . "</td>";
-                            echo "<td>" . $row['IdCliente'] . "</td>";
-                            echo "<td>" . $row['nombreCli'] . "</td>";
-                            echo "<td class='number'>" . $row['total'] . "</td>";
+                            echo "<td>" . $row['ID_Inventario'] . "</td>";
+                            echo "<td>" . $row['ID_Articulo'] . "</td>";
+                            echo "<td>" . $row['NombreArticulo'] . "</td>";
+                            echo "<td class='number'>" . $row['Cantidad_Disponible'] . "</td>";
+                            echo "<td>" . $row['tipmov'] . "</td>";
                         }
                     } else {
-                        echo "<tr><td colspan='4'>El inventario esta vacio.</td></tr>";
+                        echo "<tr><td colspan='6'>El inventario esta vacio.</td></tr>";
                     }
                     $conn->close();
                     ?>

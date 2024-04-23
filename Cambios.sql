@@ -33,5 +33,28 @@ END;
 DELIMITER ;
 
 
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `Existencia_art`(id_Articulo INT) RETURNS int(11)
+BEGIN
+    DECLARE entrada INT;
+    DECLARE salida INT;
+		
+		set entrada = 0;
+		set salida = 0;
+    
+    SELECT coalesce(SUM(CASE WHEN inv.tipmov = 1 THEN inv.Cantidad_Disponible ELSE 0 END),0) INTO entrada
+    FROM Inventario AS inv 
+    WHERE inv.ID_Articulo = id_Articulo;
+    
+    SELECT coalesce(SUM(CASE WHEN inv.tipmov = 0 THEN inv.Cantidad_Disponible ELSE 0 END),0) INTO salida
+    FROM Inventario AS inv 
+    WHERE inv.ID_Articulo = id_Articulo;
+    
+    RETURN (entrada - salida);
+END
+
+
 -- menu
 -- https://codepen.io/Creaticode/pen/jOXpzd
