@@ -80,8 +80,8 @@ include '../php/conexion.php';
                         <th>Numero Transaccion</th>
                         <th>Codigo Articulo</th>
                         <th>Nombre Articulo</th>
-                        <th class="number">Cantidad</th>
                         <th >Tipo Movimiento</th>
+                        <th class="number">Cantidad</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -103,8 +103,8 @@ include '../php/conexion.php';
                             echo "<td>" . $row['ID_Inventario'] . "</td>";
                             echo "<td>" . $row['ID_Articulo'] . "</td>";
                             echo "<td>" . $row['NombreArticulo'] . "</td>";
-                            echo "<td class='number'>" . $row['Cantidad_Disponible'] . "</td>";
                             echo "<td>" . $row['tipmov'] . "</td>";
+                            echo "<td class='number'>" . $row['Cantidad_Disponible'] . "</td>";
                         }
                     } else {
                         echo "<tr><td colspan='6'>El inventario esta vacio.</td></tr>";

@@ -1,23 +1,32 @@
+:root{
+    --color-primario: black;
+    --color-secundario: #efb810;
+    --color-terciario: #fff;
+    --color-gris-claro:#fafafa;
+    --color-font:var(--color-terciario);
+}
+
 .dashboard-header{
     color: #fff;
 }
 .insert-form {
-    background-color: black;
+    background-color: var(--color-terciario);
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 0px 10px 6px rgb(0 0 0 / 30%);
 }
 
 .insert-form h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #fff;
+    color: var(--color-primario);
 }
 
 .insert-form label {
     display: block;
     margin-bottom: 5px;
-    color: #fff;
+    color: var(--color-primario);
+    font-weight: 600;
 }
 
 .insert-form input[type="text"],
@@ -32,6 +41,7 @@
     border-radius: 3px;
     box-sizing: border-box;
     margin-top: 8px;
+    box-shadow: 1px 1px 1px 0px #000;
 }
 
 .insert-form input[type="submit"] {
@@ -40,7 +50,8 @@
     background-color:#fff;
     border: none;
     border-radius: 3px;
-    color: black;
+    color: var(--color-terciario);
+    background-color: var(--color-primario);
     cursor: pointer;
 }
 
@@ -73,7 +84,7 @@
 }
 
 .modal-content, ul {
-    color: black;
+    color: var(--color-primario);
 }
 .close {
     color: #aaa;
@@ -84,7 +95,7 @@
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: var(--color-terciario)k;
     text-decoration: none;
     cursor: pointer;
 }
@@ -97,10 +108,10 @@
     font-size: 24px; 
     width: 40px; 
     height: 40px; 
-    background-color: #fff;
-    color: black;
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
     border: none;
-    border-radius: 10px; /* Esquinas redondeadas */
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     justify-content: center;

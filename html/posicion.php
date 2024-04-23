@@ -59,7 +59,7 @@ include '../php/conexion.php';
             </ul>
         </aside>
         <div class="main-content">
-            <div class="btn-regre" style="margin-left: -1em;">
+            <!-- <div class="btn-regre" style="margin-left: -1em;">
                 <button class="cta" style="margin-left: -2px  ;">
                     <svg width="15px" height="10px" viewBox="0 0 13 10">
                         <path d="M1,5 L11,5"></path>
@@ -67,7 +67,7 @@ include '../php/conexion.php';
                     </svg>
                     <span>Regresar</span>
                 </button>
-            </div>
+            </div> -->
             <div class="main-content">
                 <div class="dashboard-header">
                     <h1>Posicion</h1>
@@ -118,7 +118,7 @@ include '../php/conexion.php';
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='7'>No se encontraron usuarios.</td></tr>";
+                        echo "<tr><td colspan='7'>No se encontraron posiciones.</td></tr>";
                     }
                     $conn->close();
                     ?>

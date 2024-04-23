@@ -63,15 +63,6 @@ include '../php/conexion.php';
         <div class="main-content">
             <div class="main-content">
                 <div class="dashboard-header">
-                    button class="cta">
-                    <span></span>
-                    <svg width="15px" height="10px" viewBox="0 0 13 10">
-                        <path d="M1,5 L11,5"></path>
-                        <polyline points="8 1 12 5 8 9"></polyline>
-                    </svg>
-                    </button>
-
-
                     <h1>Usuario</h1>
                 </div>
             </div>
