@@ -126,9 +126,9 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Nombre</th>
-                                        <th>Precio</th>
-                                        <th>Cantidad</th>
-                                        <th>importe</th>
+                                        <th class="number">Precio</th>
+                                        <th class="number">Cantidad</th>
+                                        <th class="number">importe</th>
                                     </tr>
                                 </thead>
                                 <tbody id="table-body">

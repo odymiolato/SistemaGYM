@@ -111,14 +111,17 @@ async function AddArt(idArt, cantidad) {
     colprecio.textContent = detalle.precio;
     colprecio.setAttribute("name", "colprecio");
     colprecio.setAttribute("ondblclick", `editar(${detalle.ID_Articulo})`);
+    colprecio.classList.add("number");
 
     colcant.textContent = detalle.cantidad;
     colcant.setAttribute("name", "colcant");
     colcant.setAttribute("ondblclick", `editar(${detalle.ID_Articulo})`);
+    colcant.classList.add("number");
 
     colimporte.textContent = detalle.importe;
     colimporte.setAttribute("name", "colimporte");
     colimporte.setAttribute("ondblclick", `editar(${detalle.ID_Articulo})`);
+    colimporte.classList.add("number");
 
     tr.setAttribute("id", `${detalle.ID_Articulo}`);
     tr.appendChild(colid);
