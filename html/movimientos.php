@@ -63,7 +63,7 @@ include '../php/conexion.php';
         <div class="main-content">
             <div class="main-content">
                 <div class="dashboard-header">
-                    <h1>Ventas</h1>
+                    <h1>Movimientos</h1>
                 </div>
             </div>
             <div class="table-header">
@@ -132,20 +132,19 @@ include '../php/conexion.php';
                 console.log('Eliminar usuario con ID:', idUsuario);
             }
             const filtroInput = document.getElementById('filtro');
-            const filasVentas = document.getElementsByClassName('fila-venta');
+            const filasMovimientos = document.getElementsByClassName('fila-venta');
 
 
             filtroInput.addEventListener('keyup', function() {
                 const filtro = filtroInput.value.toLowerCase();
 
-                for (let i = 0; i < filasVentas.length; i++) {
-                    const textoFila = filasVentas[i].innerText.toLowerCase();
+                for (let i = 0; i < filasMovimientos.length; i++) {
+                    const textoFila = filasMovimientos[i].innerText.toLowerCase();
 
-                    // Mostrar la fila si coincide con el filtro, ocultarla si no
                     if (textoFila.includes(filtro)) {
-                        filasVentas[i].style.display = 'table-row';
+                        filasMovimientos[i].style.display = 'table-row';
                     } else {
-                        filasVentas[i].style.display = 'none';
+                        filasMovimientos[i].style.display = 'none';
                     }
                 }
             });

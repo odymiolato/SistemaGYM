@@ -53,7 +53,7 @@ include '../php/conexion.php';
                 <div class="link"><i class="fa-solid fa-magnifying-glass"></i>Consultas<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu">
                         <li><a href="ventas.php">Ventas</a></li>
-                        <li><a href="#">Movimientos</a></li>
+                        <li><a href="movimientos.php">Movimientos</a></li>
                     </ul>
                 </li>
             </ul>
