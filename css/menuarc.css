@@ -1,7 +1,7 @@
 :root {
     --color-primario: black;
     --color-secundario: #efb810;
-    --color-terciario: #333;
+    /* --color-terciario: #333; */
 }
 
 ul {
@@ -82,7 +82,7 @@ ul {
  -----------------------------*/
 .submenu {
     display: none;
-    background: var(--color-terciario);
+    background: #333;
     font-size: 14px;
     border-right:1px solid #4b4a5e;
 }

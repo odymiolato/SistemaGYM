@@ -1,7 +1,7 @@
 :root {
   --color-primario: black; 
   --color-secundario: #efb810; 
-  --color-terciario: #333;
+  --color-terciario: #fff;
   --color-gris-claro:#ccc;
 }
 
@@ -19,7 +19,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--color-terciario);
+  background-color: var(--color-terciario) !important;
   color: var(--color-gris-claro);
 }
 
@@ -152,6 +152,7 @@ body {
 
 .dashboard-header h1 {
   margin-bottom: 20px;
+  color: var(--color-primario);
 }
 
 .dashboard-grid {

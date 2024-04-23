@@ -1,7 +1,7 @@
 :root {
     --color-primario: black;
     --color-secundario: #efb810;
-    --color-terciario: #333;
+    --color-terciario: #fff;
 }
 
 .table-header {
@@ -33,7 +33,6 @@ table {
 
 th,
 td {
-    border: 1px solid var(--color-terciario);
     padding: 10px;
     text-align: left;
 }
@@ -44,7 +43,8 @@ th {
 }
 
 td{
-    color: var(--color-secundario);
+    color: var(--color-primario);
+    font-weight: 600;
 }
 
 .edit-btn,
