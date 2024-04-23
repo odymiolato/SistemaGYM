@@ -12,6 +12,7 @@ include '../php/conexion.php';
         @import url(../css/base.css);
         @import url(../css/usuarios.css);
         @import url(../css/menuarc.css);
+        @import url(../css/ventas.css);
     </style>
 </head>
 
@@ -99,59 +100,42 @@ include '../php/conexion.php';
 
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<tr class='fila-venta'>";
-                            echo "<td>" . $row['numfac'] . "</td>";
-                            echo "<td>" . $row['fecha'] . "</td>";
-                            echo "<td>" . $row['IdCliente'] . "</td>";
-                            echo "<td>" . $row['nombreCli'] . "</td>";
-                            echo "<td class='number'>" . $row['total'] . "</td>";
+                            echo "<tr id='" . $row['numfac'] . "' class='fila-venta'>";
+                            echo "<td ondblclick = 'openModal(".$row['numfac'].")'>" . $row['numfac'] . "</td>";
+                            echo "<td ondblclick = 'openModal(".$row['numfac'].")'>" . $row['fecha'] . "</td>";
+                            echo "<td ondblclick = 'openModal(".$row['numfac'].")'>" . $row['IdCliente'] . "</td>";
+                            echo "<td ondblclick = 'openModal(".$row['numfac'].")'>" . $row['nombreCli'] . "</td>";
+                            echo "<td class='number' ondblclick = 'openModal(".$row['numfac'].")'>" . $row['total'] . "</td>";
                         }
                     } else {
-                        echo "<tr><td colspan='4'>El inventario esta vacio.</td></tr>";
+                        echo "<tr><td colspan='6'>El inventario esta vacio.</td></tr>";
                     }
                     $conn->close();
                     ?>
                 </tbody>
             </table>
         </div>
-
-        <script>
-            function redirectToNewUserPage() {
-                window.location.href = "inventarionew.php";
-            }
-
-            function editarUsuario(idUsuario) {
-                const myForm = window.document.getElementById('editar' + idUsuario);
-                myForm.submit();
-                console.log('Editar usuario con ID:', idUsuario);
-            }
-
-            function eliminarUsuario(idUsuario) {
-                const myForm = window.document.getElementById('eliminar' + idUsuario);
-                myForm.submit();
-                console.log('Eliminar usuario con ID:', idUsuario);
-            }
-            const filtroInput = document.getElementById('filtro');
-            const filasVentas = document.getElementsByClassName('fila-venta');
-
-
-            filtroInput.addEventListener('keyup', function() {
-                const filtro = filtroInput.value.toLowerCase();
-
-                for (let i = 0; i < filasVentas.length; i++) {
-                    const textoFila = filasVentas[i].innerText.toLowerCase();
-
-                    // Mostrar la fila si coincide con el filtro, ocultarla si no
-                    if (textoFila.includes(filtro)) {
-                        filasVentas[i].style.display = 'table-row';
-                    } else {
-                        filasVentas[i].style.display = 'none';
-                    }
-                }
-            });
-        </script>
+        <div id="Modals" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="titulo-modal">Detalle Venta</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th class="number">Precio</th>
+                            <th class="number">Cantidad</th>
+                            <th class="number">Importe</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body-modal" class="table-body-modal"></tbody>
+                </table>
+            </div>
+        </div>
 </body>
 
 </html>
 <script type="text/javascript" src="../js/accordion.js"></script>
+<script type="text/javascript" src="../js/venrtas.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">

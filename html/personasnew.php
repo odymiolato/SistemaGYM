@@ -18,7 +18,6 @@
             <!-- Contenido de la barra superior, como un menú de navegación u otra información -->
         </aside>
         <aside class="sidebar-left">
-            <img src="pngwing.com.png" alt="Logo" class="logo">
 
             <img src="../img/Logo.png" alt="Logo" class="logo">
 
