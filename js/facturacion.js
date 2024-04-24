@@ -217,35 +217,56 @@ function validar() {
 }
 async function Guardar() {
 
-    if (!validar()) {
-        return;
-    }    
+    // if (!validar()) {
+    //     return;
+    // }    
 
-    const idcli = document.getElementById("idCliente").value;
-    const nombreCli = document.getElementById("NombreCli").value;
-    const fecha = document.getElementById("fecha").value;
-    let total = 0;
+    // const idcli = document.getElementById("idCliente").value;
+    // const nombreCli = document.getElementById("NombreCli").value;
+    // const fecha = document.getElementById("fecha").value;
+    // let total = 0;
 
-    ListDetalle.forEach((element) => {
-        total += element.importe;
-    });
+    // ListDetalle.forEach((element) => {
+    //     total += element.importe;
+    // });
 
-    const venta = {
-        idcli: idcli,
-        nombreCli: nombreCli,
-        fecha: fecha,
-        total: total,
-        detalle: ListDetalle,
-    }
-    console.log(venta);
+    // const venta = {
+    //     idcli: idcli,
+    //     nombreCli: nombreCli,
+    //     fecha: fecha,
+    //     total: total,
+    //     detalle: ListDetalle,
+    // }
+    // // console.log(venta);
 
-    const response = await fetch(
-        'http://localhost/SistemaGYM/php/SendVenta.php', {
-        method: "POST",
-        body: JSON.stringify(venta)
-    }
-    );
-    nuevo()
+    // const response = await fetch(
+    //     'http://localhost/SistemaGYM/php/SendVenta.php', {
+    //     method: "POST",
+    //     body: JSON.stringify(venta)
+    // }
+    // );
+
+    // let data = await response.json();
+    imprimir(1);
+    nuevo();
+}
+
+function imprimir(numfac){
+    let form = document.createElement("form");
+    form.setAttribute("action","../print/factura.php");
+    form.setAttribute("method","post");
+
+    let input = document.createElement("input");
+    input.setAttribute("type","text");
+    input.setAttribute("name","numfac");
+    input.value = numfac;
+    form.appendChild(input);
+    // console.log(form);
+    // return;
+
+    let body = document.querySelector("body");
+    body.appendChild(form);
+    form.submit();
 }
 
  

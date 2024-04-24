@@ -43,4 +43,4 @@ if (isset($data) && !empty($data)) {
     echo json_encode("No se proporcionaron datos válidos.");
 }
 $conn->close();
-if($tineerror){ echo json_encode("Ha ocurrido un error, por lo tanto se a echo un rolback a la transaccion.");} else {echo json_encode(true);}
+if($tineerror){ echo json_encode("Ha ocurrido un error, por lo tanto se a echo un rolback a la transaccion.");} else {echo json_encode($numfac);}

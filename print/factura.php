@@ -1,6 +1,8 @@
 <?php
 include "../php/conexion.php";
 
+$numfac = 1;
+
 $sql = "SELECT 
             ventas.numfac,
             ventas.IdCliente,
@@ -14,7 +16,7 @@ $sql = "SELECT
             Ventas_detalle.ilmporte   
         FROM ventas 
             INNER JOIN Ventas_detalle ON Ventas_detalle.numfac = ventas.numfac
-        WHERE ventas.numfac = 2";
+        WHERE ventas.numfac = $numfac";
 
 $sql2 = "SELECT
             ventas.numfac,
@@ -23,7 +25,7 @@ $sql2 = "SELECT
             ventas.fecha,
             ventas.total
         FROM ventas 
-        WHERE ventas.numfac = 2";
+        WHERE ventas.numfac = $numfac";
 
 
 
@@ -114,3 +116,9 @@ $temp = $resul2->fetch_assoc();
 
 </html>
 <?php $conn->close(); ?>
+<script>
+    window.print();
+    window.onafterprint = () => {
+        window.location.assign("http://localhost/SistemaGYM/html/facturacion.php");
+    };
+</script>
