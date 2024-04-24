@@ -6,6 +6,7 @@
 }
 
 .container {
+    visibility: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -97,11 +98,17 @@ thead {
     justify-content: right;
     float: left;
 
-    > .total {
+    >.total {
         >h4 {
             border-top: 1px solid var(--color-primario);
             width: 140px;
         }
     }
 
+}
+
+@media print {
+    .container {
+        visibility: visible;
+    }
 }
