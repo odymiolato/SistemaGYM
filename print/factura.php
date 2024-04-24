@@ -1,7 +1,7 @@
 <?php
 include "../php/conexion.php";
 
-$numfac = 1;
+$numfac = $_POST['numfac'];
 
 $sql = "SELECT 
             ventas.numfac,

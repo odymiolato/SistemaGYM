@@ -39,8 +39,9 @@
 }
 
 .form-facturacion .btn_Guardar:hover {
-    background-color: #efb810;
-    COLOR: var(--color-gris-claro);
+    background-color: var(--color-secundario);
+    COLOR: var(--color-primario);
+    font-weight: bold;
 }
 
 .form-facturacion input[type="text"],
@@ -112,6 +113,14 @@
 ul {
     color: black;
 }
+.table-body-modal{
+    > tr:hover{
+        background-color: var(--color-secundario);
+        color: var(--color-primario);
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
 
 .close {
     color: #aaa;
@@ -149,7 +158,7 @@ ul {
 
 .boton-lupa:hover {
     background-color: #efb810;
-    color: var(--color-gris-claro);
+    color: var(--color-primario);
 }
 
 .detalle {

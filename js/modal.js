@@ -3,11 +3,13 @@ async function openModal(accion) {
 	console.log(accion);
 
 	const lista = document.getElementById("lista");
-	lista.innerHTML = "";
+	const table = document.getElementById("table-body-modal");
+
 	let response;
 	let data;
 	switch (accion) {
 		case 1:
+			lista.innerHTML = "";
 			document.getElementById("titulo-modal").textContent = "Seleccionar Persona";
 
 			response = await fetch(
@@ -26,6 +28,7 @@ async function openModal(accion) {
 			break;
 
 		case 2:
+			lista.innerHTML = "";
 			document.getElementById("titulo-modal").textContent = "Seleccionar Posicion";
 
 			response = await fetch(
@@ -44,6 +47,7 @@ async function openModal(accion) {
 			break;
 
 		case 3:
+			lista.innerHTML = "";
 			document.getElementById("titulo-modal").textContent = "Seleccionar Membresia";
 
 			response = await fetch(
@@ -69,18 +73,34 @@ async function openModal(accion) {
 			);
 			data = await response.json();
 
-
+			table.innerHTML = "";
 			data.forEach((articulo) => {
-				const li = document.createElement("li");
-				li.textContent = `${articulo.Nombre} - ID ${articulo.ID_Articulo}`;
-				li.onclick = function () {
+				let tr = document.createElement("tr");
+
+				let colID = document.createElement("td");
+				colID.textContent = articulo.ID_Articulo;
+
+				let colNombre = document.createElement("td");
+				colNombre.textContent = articulo.Nombre;
+
+
+				// li.textContent = `${articulo.Nombre} - ID ${articulo.ID_Articulo}`;
+				colID.onclick = function () {
 					select(articulo.ID_Articulo, 4, articulo.Nombre, articulo.Precio);
 				};
-				lista.appendChild(li);
+				colNombre.onclick = function () {
+					select(articulo.ID_Articulo, 4, articulo.Nombre, articulo.Precio);
+				};
+
+				tr.appendChild(colID)
+				tr.appendChild(colNombre)
+
+				table.appendChild(tr);
 			});
 			break;
 		case 5:
 			document.getElementById("titulo-modal").textContent = "Seleccionar Cliente";
+			table.innerHTML = "";
 
 			response = await fetch(
 				"http://localhost/SistemaGYM/php/Getclientes.php"
@@ -90,12 +110,27 @@ async function openModal(accion) {
 
 
 			data.forEach((cliente) => {
-				const li = document.createElement("li");
-				li.textContent = `${cliente.nombre} - ID ${cliente.idCliente}`;
-				li.onclick = function () {
+				let tr = document.createElement("tr");
+
+				let colID = document.createElement("td")
+				colID.textContent = cliente.idCliente;
+
+				let colNombre = document.createElement("td")
+				colNombre.textContent = cliente.nombre;
+
+				colID.onclick = function () {
 					select(cliente.idCliente, 5, cliente.nombre);
 				};
-				lista.appendChild(li);
+
+				colNombre.onclick = function () {
+					select(cliente.idCliente, 5, cliente.nombre);
+				};
+
+				tr.appendChild(colID);
+				tr.appendChild(colNombre);
+
+				table.appendChild(tr);
+
 			});
 			break;
 

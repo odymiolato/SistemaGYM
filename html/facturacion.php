@@ -141,14 +141,33 @@
                 </div>
             </div>
         </div>
-        <div id="Modals" class="modal">
+        <!-- <div id="Modals" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <h2 id="titulo-modal"></h2>
                 <ul id="lista">
                 </ul>
             </div>
+        </div> -->
+
+
+        <div id="Modals" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="titulo-modal">Detalle Venta</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body-modal" class="table-body-modal"></tbody>
+                </table>
+            </div>
         </div>
+
+
     </div>
 </body>
 
