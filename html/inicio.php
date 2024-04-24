@@ -67,11 +67,14 @@
         </aside>
 
         <div class="main-content">
-            <div class="main-content">
-                <div class="dashboard-header">
+            <div class="main-content" style="display: flex; justify-content: center; text-align: center; align-items: center; margin-top: 12em;">
+                <img style="width: 300px;" src="../img/Logo.png" alt="img">
+                <h2 style="margin: 10px; color:black; font-size: 30px;">Bienvenido</h2>
+
+                <!-- <div class="dashboard-header">
                     <h1>Dashboard</h1>
-                </div>
-                <div class="dashboard-grid">
+                </div> -->
+                <!-- <div class="dashboard-grid">
                     <div class="card" id="card-1">Widget 1</div>
                     <div class="card" id="card-2">Widget 2</div>
                     <div class="card" id="card-3">Widget 3</div>
@@ -83,8 +86,8 @@
                     <div class="card" id="card-bar-chart">
                         <canvas id="barChart"></canvas>
                     </div>
-                    <!-- Añade más widgets según sea necesario -->
-                </div>
+                    
+                </div> -->
             </div>
 
         </div>
@@ -96,3 +99,4 @@
 </html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <script type="text/javascript" src="../js/accordion.js"></script>
+
