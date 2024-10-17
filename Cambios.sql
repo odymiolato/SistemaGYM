@@ -58,3 +58,15 @@ END
 
 -- menu
 -- https://codepen.io/Creaticode/pen/jOXpzd
+
+
+create table pagos(
+	idPago int primary key auto_increment,
+    fecha date not null,
+    idCliente int not null,
+    idMembresia int not null, 
+    monto numeric(14,2) not null
+);
+
+alter table pagos add foreign key (idCliente)  references cliente(idCliente);
+alter table pagos add foreign key (idMembresia) references membresia(idCliente)

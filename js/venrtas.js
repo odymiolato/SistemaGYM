@@ -70,8 +70,7 @@ filtroInput.addEventListener('keyup', function() {
 
 	for (let i = 0; i < filasVentas.length; i++) {
 		const textoFila = filasVentas[i].innerText.toLowerCase();
-
-		// Mostrar la fila si coincide con el filtro, ocultarla si no
+		
 		if (textoFila.includes(filtro)) {
 			filasVentas[i].style.display = 'table-row';
 		} else {
